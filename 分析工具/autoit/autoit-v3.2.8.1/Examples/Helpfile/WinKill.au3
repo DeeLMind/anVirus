@@ -1,0 +1,1 @@
+WinKill("Untitled - ", "")

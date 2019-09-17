@@ -1,0 +1,564 @@
+  V2.64 to V3.0.100 (Version 1.0.6)  
+ 
+<Alphanum>
+-> <builtin> = [a-z][A-Z][0-9][_]...
+
+<Command>
+-> <builtin> = <Statement>, <Par>, ...
+
+<Comment>
+-> <builtin> = ;
+
+<Func>
+-> <builtin> = <Alphanum>
+
+<Default>
+-> <builtin> = default or <Value>
+
+<Immediat>
+-> <builtin> = [a-z][A-Z][0-9][_]...
+
+<Goto>
+-> <builtin> = next param is  a <Else> label
+
+<Label>
+-> <builtin> = <Alphanum>:
+
+<Else>
+-> <builtin> = <Label> preceeded by Goto statement and decrease indent level #-
+
+<Endif>
+-> <builtin> = <Label> NOT preceeded by Goto statement and decrease indent level #-
+
+<NLCommand>
+-> <builtin> = read parameters on next line
+
+<EOLString>
+-> <builtin> = starting on first non blank, ending last non blank
+
+<String>
+-> <builtin> = starting on first non blank, ending last non blank or first comma
+
+<EOLValue>
+-> <builtin> = [0-9]... or <Variable> or <EOLString>
+
+<Value>
+-> <builtin> = [0-9]... or <Variable> or <String>
+
+<Variable>
+-> <builtin> = <Alphanum>
+
+<VariableDef>
+-> <builtin> = <Alphanum>
+
+<ClipBoard>
+-> <builtin> = CLIPBOARD
+
+<OnOff>
+On  -> 1
+Off -> 0
+
+<Hide>
+Hide -> '*'
+
+<MaxMinHide>
+Max  -> @SW_MAXIMIZE
+Min  -> @SW_MINIMIZE
+Hide -> @SW_HIDE
+
+<msgboxret>
+Ok     -> 1
+Cancel -> 2
+Abort  -> 3
+Retry  -> 4
+Ignore -> 5
+Yes    -> 6
+No     -> 7
+
+<SpecialVariables>
+%A_OSTYPE		-> @OSTYPE
+%A_OSVERSION		-> @OSVERSION
+%A_SCRIPTNAME		-> @SCRIPTNAME
+%A_SCRIPTDIR		-> @SCRIPTDIR
+%A_SCRIPTFULLPATH	-> @SCRIPTFULLPATH
+%A_WORKINGDIR		-> @WORKINGDIR
+%A_SEC			-> @SEC
+%A_MIN			-> @MIN
+%A_HOUR			-> @HOUR
+%A_MDAY			-> @MDAY
+%A_MON			-> @MON
+%A_YEAR			-> @YEAR
+%A_WDAY			-> @WDAY
+%A_YDAY			-> @YDAY
+%A_NUMBATCHLINES	-> ""
+%CLIPBOARD		-> ClipGet ( )
+%ERRORLEVEL		-> $__err
+%COMSPEC		-> @Comspec
+%TEMP			-> @TempDir
+%PROGRAMFILES		-> @ProgramFilesDir
+%COMMONPROGRAMFILES	-> @CommonFilesDir
+%APPDATA		-> @AppDataDir
+%WINDIR			-> @WindowsDir
+%DESKTOP		-> @DesktopDir
+%SYSTEMROOT		-> @SystemDir
+%COMPUTERNAME		-> @ComputerName
+%USERNAME		-> @UserName
+%USERDOMAIN		-> EnvGet("USERDOMAIN")
+%USERPROFILE		-> EnvGet("USERPROFILE")
+%ALLUSERSPROFILE	-> EnvGet("ALLUSERSPROFILE")
+
+#StartCode
+-> ; Prologue		; should be renamed (?) and called somewhere if you are converting  an include file
+-> __init()
+-> ; End Prologue
+
+#EndCode
+-> ; Epilogue	Extra Functions needed for Compatibility execution
+-> ; 			take care of possible redefinition if you are converting  an include file
+-> ;
+
+#Func__cmp
+-> func __cmp ($_1, $_2)	; to handle Case sensitive comparison
+-> global $__strcase
+-> if $__strcase = 0 then
+-> 	return ($_1 = $_2)
+-> else
+-> 	return ($_1 == $_2)
+-> endif
+-> endfunc
+-> ;
+
+#Func__err
+-> func __err ($_1)		; to handle return error V2=1 V3=0
+-> if $_1 = 0 then
+-> 	return 1
+-> else
+-> 	return 0
+-> endif
+-> endfunc
+-> ;
+
+#Func__idx
+-> func __idx ($_1, $_2)	; to handle array references
+-> 				; 	must be mofified to return a number
+->				; 	$_1 is the parameter which select the array entry
+->				; 	$_2 is the array name
+-> 				;
+->				; VERY simple case for $_1 being a number
+-> if isNumber($_1) then return $_1
+-> 				;   still need to setup the dimension value
+->				;   in the Global declaration section
+->				;   at the beginning or at the end of the script
+-> msgbox(4096, "AutoItV2toV3 ERROR", "You need to check the __idx() implementation" & @LF & @TAB & "and the Global " & $_2 & "declaration") 
+-> exit	999; script stop
+-> endfunc
+-> ;
+
+#Func__init
+-> func __init ()		; to define global variables needed
+
+#Include <EOLString>
+-> #include #?A1
+
+[ADLIB] <NLCommand> <String>, <String>, <Command>
+-> Func myAdLibV2 ( )
+-> if WinExists ( #1, #2 ) then
+-> #[#C
+-> #]
+-> EndFunc
+
+AdlibOff
+-> AdlibDisable ( )
+
+AdlibOn
+-> AdlibEnable ( "myAdLibV2" )
+
+BlockInput, <OnOff>
+-> BlockInput ( #1 )
+
+Break, <OnOff>
+-> Break ( #1 )
+
+DetectHiddenText, <OnOff>
+-> AutoItSetOption ( "WinDetectHiddenText", #1 )
+
+Exit, <Value>
+-> Exit #1#)
+
+EnvAdd, <Variable>, <Value>
+-> #1 = #1 + #2
+
+EnvDiv, <Variable>, <Value>
+-> #1 = #1 / #2
+
+EnvMult, <Variable>, <Value>
+-> #1 = #1 * #2
+
+EnvSub, <Variable>, <Value>
+-> #1 = #1 - #2
+
+FileAppend, <String>, <EOLValue>
+-> #EFileWriteLine ( #2, #1 )#E
+
+FileCopy, <String>, <String>, <Value>
+-> #EFileCopy ( #1, #2, #3 )#E
+
+FileCreateDir, <EOLValue>
+-> #EDirCreate ( #1 )#E
+
+FileDelete, <EOLValue>
+-> #EFileDelete ( #1 )#E
+
+FileInstall, <String>, <String>, <Value>
+-> #EFileInstall ( #1, #2, #3 )#E
+
+FileReadLine, <VariableDef>, <String>, <Value>
+-> #1 = FileReadLine ( #2, #3 )
+-> #?E$__err = Abs(@error)	; for ERRORLEVEL compatibility checking
+
+FileRemoveDir, <EOLValue>
+-> #EDirRemove ( #1 )#E
+
+FileSelectFile, <VariableDef>, <Value>, <Value>
+-> #1 = FileSaveDialog ( "FileSelectFile", #3, "*.*", #2 )
+
+Gosub, <Func>
+-> #F
+
+Return
+-> Return#R#)
+
+Goto, <Label>
+-> #?1
+-> Gosub, #1
+
+HideAutoItDebug, <OnOff>
+-> #?E$__hideAutoItDebug_ignored = #1
+
+HideAutoItWin, <OnOff>
+-> #?E$__hideAutoItWin_ignored = #1
+
+IfInString#3Goto?, <Variable>, <String>, <Goto>, <Else>
+-> #I StringInStr ( #1, #2, $__strcase ) = 0 #T
+
+IfInString, <Variable>, <String>, <Command>
+-> if StringInStr ( #1, #2, $__strcase ) > 0 then
+-> #[#C
+-> #]
+
+IfNotInString#3Goto?, <Variable>, <String>, <Goto>, <Else>
+-> #I StringInStr ( #1, #2, $__strcase ) > 0 #T
+
+IfNotInString, <Variable>, <String>, <Command>
+-> if StringInStr ( #1, #2, $__strcase ) = 0 then
+-> #[#C
+-> #]
+
+IfWinExist#3Goto?, <String>, <String>, <Goto>, <Else>
+-> #I NOT WinExists ( #1, #2 ) #T
+
+IfWinExist, <String>, <String>, <Command>
+-> if WinExists ( #1, #2 ) then
+-> #[#C
+-> #]
+
+IfWinNotExist#3Goto?, <String>, <String>, <Goto>, <Else>
+-> if WinExists ( #1, #2 ) #T
+
+IfWinNotExist, <String>, <String>, <Command>
+-> if NOT WinExists ( #1, #2 ) then
+-> #[#C
+-> #]
+
+IfWinActive#3Goto?, <String>, <String>, <Goto>, <Else>
+-> #I NOT WinActive ( #1, #2 ) #T
+
+IfWinActive, <String>, <String>, <Command>
+-> if WinActive ( #1, #2 ) then
+-> #[#C
+-> #]
+
+IfWinNotActive#3Goto?, <String>, <String>, <Goto>, <Else>
+-> #I WinActive ( #1, #2 ) #T
+
+IfWinNotActive, <String>, <String>, <Command>
+-> if NOT WinActive ( #1, #2 ) then
+-> #[#C
+-> #]
+
+IfEqual#3Goto?, <Variable>, <Value>, <Goto>, <Else>
+-> #I NOT #__cmp(#1, #2) #T
+
+IfEqual, <Variable>, <Value>, <Command>
+-> if #__cmp(#1, #2) then
+-> #[#C
+-> #]
+
+IfNotEqual#3Goto?, <Variable>, <Value>, <Goto>, <Else>
+-> #I #__cmp(#1, #2) #T
+
+IfNotEqual, <Variable>, <Value>, <Command>
+-> if NOT #__cmp(#1, #2) then
+-> #[#C
+-> #]
+
+IfGreater#3Goto?, <Variable>, <Value>, <Goto>, <Else>
+-> #I NOT ( #1 > #2 ) #T
+
+IfGreater, <Variable>, <Value>, <Command>
+-> if ( #1 > #2 ) then
+-> #[#C
+-> #]
+
+IfLessOrEqual#3Goto?, <Variable>, <Value>, <Goto>, <Else>
+-> #I ( #1 > #2 ) #T
+
+IfLessOrEqual, <Variable>, <Value>, <Command>
+-> if NOT ( #1 > #2 ) then
+-> #[#C
+-> #]
+
+IfLess#3Goto?, <Variable>, <Value>, <Goto>, <Else>
+-> #I NOT ( #1 < #2 ) #T
+
+IfLess, <Variable>, <Value>, <Command>
+-> if ( #1 < #2 ) then
+-> #[#C
+-> #]
+
+IfGreaterOrEqual#3Goto?, <Variable>, <Value>, <Goto>, <Else>
+-> #I ( #1 < #2 ) #T
+
+IfGreaterOrEqual, <Variable>, <Value>, <Command>
+-> if NOT ( #1 < #2 ) then
+-> #[#C
+-> #]
+
+IfExist#2Goto?, <String>, <Goto>, <Else>
+-> #I NOT FileExists ( #1 ) #T
+
+IfExist, <String>, <Command>
+-> if FileExists ( #1 ) then
+-> #[#C
+-> #]
+
+IfNotExist#2Goto?, <String>, <Goto>, <Else>
+-> #I FileExists ( #1 ) #T
+
+IfNotExist, <String>, <Command>
+-> if NOT FileExists ( #1 ) then
+-> #[#C
+-> #]
+
+IfMsgBox#2Goto?, <msgboxret>, <Goto>, <Else>
+-> #I NOT ( $__msgbox = #1 ) #T
+
+IfMsgBox, <msgboxret>, <Command>
+-> if ( $__msgbox = #1 ) then
+-> #[#C
+-> #]
+
+IniRead, <VariableDef>, <String>, <String>, <EOLValue>
+-> #1 = IniRead ( #2, #3, #4, "ERROR" )
+
+IniWrite, <String>, <String>, <String>, <EOLValue>
+-> IniWrite ( #2, #3, #4, #1 )
+
+IniDelete, <String>, <String>, <EOLValue>
+-> IniDelete ( #1, #2, #3 )
+
+InputBox, <VariableDef>, <String>, <String>, <Hide>
+-> #1 = InputBox ( #2, #3, '', #4 )
+
+LeftClick, <Value>, <Value>
+-> MouseClick( "left", #1, #2 )
+
+RightClick, <Value>, <Value>
+-> MouseClick( "right", #1, #2 )
+
+LeftClickDrag, <Value>, <Value>, <Value>, <Value>
+-> MouseClickDrag( "left", #1, #2, #3, #4 )
+
+RightClickDrag, <Value>, <Value>, <Value>, <Value>
+-> MouseClickDrag( "right", #1, #2, #3, #4 )
+
+MouseGetPos, <VariableDef>, <VariableDef>
+-> $__a_ = MouseGetPos ( )
+-> #1 = $__a_[0]
+-> #2 = $__a_[1]
+
+MouseMove, <Value>, <Value>
+-> MouseMove ( #1, #2 )
+
+MsgBox, <Value>, <String>, <EOLValue>
+-> $__msgbox = MsgBox ( #1, #2, #3 )
+
+Random, <VariableDef>, <Value>, <Value>
+-> #1 = Random ( #2, #3 )
+
+RegRead, <VariableDef>, <Immediat>, <Immediat>, <String>, <EOLValue>
+-> #1 = RegRead ( '#3\' & #4, #5 )
+-> #?E$__err = Abs(@error)	; for ERRORLEVEL compatibility checking
+
+RegWrite, <Immediat>, <Immediat>, <String>, <String>, <EOLValue>
+-> #ERegWrite ( '#2\' & #3, #4, '#1', #5 )#E
+
+RegDelete, <Immediat>, <String>, <EOLValue>
+-> #ERegDelete ( '#1\' & #2, #3 )#E
+
+Run, <String>, <String>, <MaxMinHide>
+-> Run ( #1, #2, #3 )
+
+RunWait, <String>, <String>, <MaxMinHide>
+-> #ERunWait ( #1, #2, #3 )#E
+
+Repeat#10?, <Value>
+-> for #N = 0 to 0 step 0#+
+
+Repeat, <Value>
+-> for #N = 1 to #1#+
+
+EndRepeat
+-> #-next
+
+Send, <EOLValue>
+-> Send ( #1 )
+
+SetCapslockState, <OnOff>
+-> SendSetCapslockState ( #1 )
+
+SetEnv#1Clipboard? <Variable>, <EOLValue>
+-> ClipPut ( #2 )
+
+SetEnv, <VariableDef>, <EOLValue>
+-> #?P#1 = #2
+
+SetBatchLines, <Value>
+-> #?E$__SetBatchLines_ignored = #1
+
+SetKeyDelay, <Value>
+-> AutoItSetOption ( "SendKeyDelay", #1 )
+
+SetStoreCapslockMode, <OnOff>
+-> AutoItSetOption ( "SendCapslockMode", #1 )
+
+SetTitleMatchMode, <Value>
+-> AutoItSetOption ( "WinTitleMatchMode", #1 )
+
+SetWinDelay, <Value>
+-> AutoItSetOption ( "WinWaitDelay", #1 )
+
+Shutdown, <Value>
+-> Shutdown ( #1 )
+
+Sleep, <Value>
+-> Sleep ( #1 )
+
+SplashTextOn, <Value>, <Value>, <String>, <EOLValue>
+-> SplashTextOn ( #3, #4, #1, #2 )
+
+SplashTextOff
+-> SplashOff ( )
+
+StringCaseSense, <OnOff>
+-> global $__strcase = #1
+
+StringLeft, <VariableDef>, <Variable>, <EOLValue>
+-> #1 = StringLeft( #2, #3 )
+
+StringRight, <VariableDef>, <Variable>, <EOLValue>
+-> #1 = StringRight( #2, #3 )
+
+StringMid, <VariableDef>, <Variable>, <Value>, <EOLValue>
+-> #1 = StringMid( #2, #3, #4 )
+
+StringLen, <VariableDef>, <Variable>
+-> #1 = StringLen ( #2 )
+
+StringReplace, <VariableDef>, <Variable>, <String>, <EOLValue>
+-> #1 = StringReplace( #2, #3, #4, 0, $__strcase )
+-> #?E$__err = #__err(NOT #1 == #2)	; for ERRORLEVEL compatibility checking
+
+StringTrimLeft, <VariableDef>, <Variable>, <EOLValue>
+-> #1 = StringTrimLeft( #2, #3 )
+
+StringTrimRight, <VariableDef>, <Variable>, <EOLValue>
+-> #1 = StringTrimRight( #2, #3 )
+
+StringGetPos, <VariableDef>, <Variable>, <EOLValue>
+-> #1 = StringInStr( #2, #3, $__strcase ) - 1
+-> #?E$__err = #__err(NOT #1 = -1)	; for ERRORLEVEL compatibility checking
+
+WinGetActiveStats, <VariableDef>, <Variable>, <Variable>, <Variable>, <Variable>
+-> #1 = WinGetTitle( '', '' )
+-> $__a_ = WinGetPos( #1 )
+-> #2 = $__a_[2]
+-> #3 = $__a_[3]
+-> #4 = $__a_[0]
+-> #5 = $__a_[1]
+
+WinGetActiveTitle, <VariableDef>
+-> #1 = WinGetTitle( '', '' )
+
+WinKill, <String>, <EOLString>
+-> WinKill ( #1, #2 )
+
+WinWait, <String>, <String>, <Value>
+-> #EWinWait ( #1, #2, #3 )#E
+
+WinWaitClose, <String>, <String>, <Value>
+-> #EWinWaitClose ( #1, #2, #3 )#E
+
+WinWaitActive, <String>, <String>, <Value>
+-> #EWinWaitActive ( #1, #2, #3 )#E
+
+WinWaitNotActive, <String>, <String>, <Value>
+-> #EWinWaitNotActive ( #1, #2, #3 )#E
+
+WinHide#2?, <String>, <EOLString>
+-> WinShow ( #1, '', @SW_HIDE )
+
+WinHide, <String>, <EOLString>
+-> WinShow ( #1, #2, @SW_HIDE )
+
+WinShow#2?, <String>, <EOLString>
+-> WinShow ( #1, '', @SW_SHOW )
+
+WinShow, <String>, <EOLString>
+-> WinShow ( #1, #2, @SW_SHOW )
+
+WinRestore#2?, <String>, <EOLString>
+-> WinShow( #1, '', @SW_RESTORE )
+
+WinRestore, <String>, <EOLString>
+-> WinShow( #1, #2, @SW_RESTORE )
+
+WinMinimize#2?, <String>, <EOLString>
+-> WinShow ( #1, '', @SW_MINIMIZE )
+
+WinMinimize, <String>, <EOLString>
+-> WinShow ( #1, #2, @SW_MINIMIZE )
+
+WinMaximize#2?, <String>, <EOLString>
+-> WinShow ( #1, '', @SW_MAXIMIZE )
+
+WinMaximize, <String>, <EOLString>
+-> WinShow ( #1, #2, @SW_MAXIMIZE )
+
+WinActivate, <String>, <EOLString>
+-> WinActivate ( #1, #2 )
+
+WinClose, <String>, <EOLString>
+-> WinClose ( #1, #2 )
+
+WinMove, <String>, <String>, <Value>, <Value>, <Default>, <Default>
+-> WinMove ( #1, #2, #3, #4, #5, #6 )
+
+WinSetTitle, <String>, <String>, <EOLString>
+-> WinSetTitle ( #1, #2, #3 )
+
+WinMinimizeAll
+-> WinMinimizeAll ( )
+
+WinMinimizeAllUndo
+-> WinMinimizeAllUndo ( )

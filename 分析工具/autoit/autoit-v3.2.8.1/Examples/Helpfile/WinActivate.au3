@@ -1,0 +1,1 @@
+WinActivate("Untitled - Notepad", "")
