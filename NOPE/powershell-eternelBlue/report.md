@@ -8,7 +8,7 @@
 
 ## 提取计划任务3个
 * 这三个计划任务里面的混淆代码都不同，只分析其中一个（其它應該大同小异，沒有分析）(解密因为很简单，就不細說，還是不懂的小夥伴可以问我)
-![avatar](https://github.com/DeeLMind/anVirus/NOPE/powershell-eternelBlue/pic/taskEng.png)
+![avatar](./pic/taskEng.png)
 
 * 提取計劃任務的主要執行代碼部分
 ```
