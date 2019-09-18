@@ -1,1 +1,0 @@
-ControlEnable("Untitled -", "", "MDIClient1")

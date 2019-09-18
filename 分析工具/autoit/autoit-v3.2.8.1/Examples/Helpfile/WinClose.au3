@@ -1,1 +1,0 @@
-WinClose("Untitled - Notepad", "")

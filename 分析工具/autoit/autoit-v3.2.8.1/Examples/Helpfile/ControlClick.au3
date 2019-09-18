@@ -1,1 +1,0 @@
-ControlClick("Untitled -", "", "MDIClient1")

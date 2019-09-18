@@ -1,3 +1,0 @@
-xxxswf.py is published by Alexander Hanel on 
-http://hooked-on-mnemonics.blogspot.nl/2011/12/xxxswfpy.html
-without explicit license.

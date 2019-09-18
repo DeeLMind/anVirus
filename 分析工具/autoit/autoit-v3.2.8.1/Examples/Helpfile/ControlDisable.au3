@@ -1,1 +1,0 @@
-ControlDisable("Untitled -", "", "MDIClient1")

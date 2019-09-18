@@ -1,0 +1,2590 @@
+From: <ÓÉ Microsoft Internet Explorer 5 ±£´æ>
+Subject: History
+Date: Fri, 30 Sep 2011 11:51:01 +0800
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01CC7F67.39D410A0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5994
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01CC7F67.39D410A0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.autoitscript.com/autoit3/docs/history.htm
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns:v =3D "urn:schemas-microsoft-com:vml" xmlns:o =3D=20
+"urn:schemas-microsoft-com:office:office"><HEAD><TITLE>History</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1"><LINK=20
+href=3D"http://www.autoitscript.com/autoit3/docs/css/default.css" =
+type=3Dtext/css=20
+rel=3Dstylesheet>
+<STYLE type=3Dtext/css></STYLE>
+
+<META content=3D"MSHTML 6.00.2900.6036" name=3DGENERATOR></HEAD>
+<BODY>
+<H1>History</H1>
+<P style=3D"FONT-SIZE: large"><STRONG>IMPORTANT:</STRONG> <A=20
+href=3D"http://www.autoitscript.com/autoit3/docs/script_breaking_changes.=
+htm">See=20
+here</A> for recent script-breaking changes.</P>
+<P>&nbsp;</P>
+<P>Here is the summarised history of the changes to AutoIt v3.</P>
+<P style=3D"FONT-SIZE: xx-small">(For the complete technical history =
+click <A=20
+href=3D"http://www.autoitscript.com/autoit3/docs/autoit_changelog.txt">he=
+re</A>.=20
+For the complete history including <B>all changes between beta =
+versions</B>=20
+click <A=20
+href=3D"http://www.autoitscript.com/autoit3/docs/autoit_changelog_complet=
+e.txt">here</A>.)</P>
+<P>&nbsp;</P>
+<P style=3D"FONT-SIZE: small"><B><U>16th April, 2010 - =
+v3.3.6.1</U></B></P>
+<P><STRONG>AutoIt:</STRONG></P>
+<UL>
+  <LI>Fixed #1515: FileOpen() still opening in exclusive mode in some=20
+  situations. </LI></UL>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P style=3D"FONT-SIZE: small"><B><U>7th March, 2010 - =
+v3.3.6.0</U></B></P>
+<P><STRONG>AutoIt:</STRONG></P>
+<UL>
+  <LI>Added #1376: FileOpen() mode parameter is now optional. Default =
+mode is=20
+  read.=20
+  <LI>Added #1054: Added FileGetEncoding().=20
+  <LI>Added: ControlCommand() "SendCommandID" - used to send WM_COMMAND =
+Control=20
+  ID messages. Allows the automation of ToolBarWindow32 controls =
+(amongst=20
+  others). For example, the "Back" button of Internet Explorer. Use =
+Au3Info to=20
+  get the Command ID from the ToolBar tab. </LI></UL>
+<UL>
+  <LI>Fixed #1428: AdlibRegister/Unregister() were incorrectly using=20
+  case-sensitive function names.=20
+  <LI>Fixed #1448: #OnAutoItStartRegister did not work in compiled =
+scripts.=20
+  <LI>Fixed #961: RegDelete() was not working properly on 64bit keys =
+when using=20
+  the 32bit version of AutoIt and HKLM64.=20
+  <LI>Fixed: Regression in FileOpen() where it wasn't allowed to open =
+files in=20
+  read mode if they were already open in write mode.=20
+  <LI>Fixed #1449: GUICtrlDelete() not working for GUICtrlCreateDummy() =
+types.=20
+  <LI>Fixed #1458: Inet sizes were capped to 32-bits.=20
+  <LI>Fixed #1459: Hard crash when too much recursion is used.=20
+  <LI>Fixed #1464: Regular expressions with a single character * pattern =
+were=20
+  stopping after the first null match.=20
+  <LI>Fixed #1463: StringToASCIIArray() working incorrectly with UTF8=20
+  characters.=20
+  <LI>Fixed #1475: TrayItemSetState($Value, $Tray_Checked) incorrectly =
+enables a=20
+  disabled TrayItem. </LI></UL>
+<UL>
+  <LI>Changed: Send() and ControlSend() code reworked to allow for more =
+Unicode=20
+  characters to be used.=20
+  <LI>Changed: FileWriteLine() performance improved. </LI></UL>
+<P><STRONG>Aut2Exe</STRONG></P>
+<UL>
+  <LI>Fixed #1409: Ctrl+C is no longer the shortcut for Convert. It is =
+now=20
+  Ctrl+G (Go) to avoid clashing with a Ctrl+C copy operation.. =
+</LI></UL>
+<P><STRONG>Au3Info</STRONG></P>
+<UL>
+  <LI>Fixed #1444: Controls in applications like RegEdit were left =
+highlighted.=20
+  <LI>Fixed #1391: ToolbarWindow32 info only showing the first toolbar. =
+</LI></UL>
+<P><STRONG>AutoIt3Help</STRONG></P>
+<UL>
+  <LI>Fixed #1423: "Open Script" button stopped working. </LI></UL>
+<P><STRONG>AutoItX</STRONG></P>
+<UL>
+  <LI>&nbsp;Fixed: Missing .lib files readded. </LI></UL>
+<P><STRONG>UDFs:</STRONG></P>
+<UL>
+  <LI>&nbsp;Fixed #1438: AutoIt error when using _ArrayCombinations().=20
+  <LI>Fixed #1454: StringBetween() not working correctly.=20
+  <LI>Fixed #1441: _GUICtrlRichEdit_GetText() using wrong buffer length. =
+
+  <LI>Fixed #1446: _ScreenCapture_Capture() was using height/width of 1 =
+pixel=20
+  less.=20
+  <LI>Fixed #1445: Documentation updated for _MemGlobalFree().=20
+  <LI>Fixed #1469: _GDIPlus_BitmapCloneArea() documentation updated.=20
+  <LI>Fixed #1466: _GUICtrlEdit_GetLine() returns an unexpected =
+character.=20
+  <LI>Fixed #1487: _DateToDayOfWeekIso returned 0-6 but should be 1-7 =
+where=20
+  Monday =3D 1 </LI></UL>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P style=3D"FONT-SIZE: small"><B><U>15th January, 2010 - =
+v3.3.4.0</U></B></P>
+<P><STRONG>AutoIt:</STRONG></P>
+<UL>
+  <LI>Added: Ability to read and write UTF-8 files with no BOM including =
+
+  automatic detection during reading.=20
+  <LI>Added #682: Removed the 64KB limitation for FileReadLine()=20
+  <LI>Added: AutoIt scripts using the line continuation character "_" =
+are no=20
+  longer limited to a combined line length of 4095 characters.=20
+  <LI>Added: FileRead() returns the number of characters/bytes read in=20
+  @extended.=20
+  <LI>Added #1311: MouseGetCursor() returns hand cursor. </LI></UL>
+<UL>
+  <LI>Fixed #384: Under certain circumstances the network credentials =
+flag would=20
+  prevent the process from starting when launched with RunAs() or =
+RunAsWait().=20
+  <LI>Fixed #1370: StringInStr() would crash with a negative occurrence =
+and=20
+  start position greater than the string length.=20
+  <LI>Fixed #1367: Calling GUIDelete() from a GUIRegisterMsg() callback =
+that=20
+  returns $GUI_RUNDEFMSG would crash AutoIt.=20
+  <LI>Fixed #1363: FileSetPos() did not work when the origin was the =
+current=20
+  position.=20
+  <LI>Fixed #1355: Regression in how unsigned numbers are displayed when =
+
+  returned from DllCall().=20
+  <LI>Fixed #1396: Crash in DllCallbackGetPtr() with invalid handle.=20
+  <LI>Fixed #1352: StringSplit() hard crash with binary data.=20
+  <LI>Fixed #1398: Fixed declaration of $tagPARAFORMAT2 from =
+GuiRichEdit.au3=20
+  </LI></UL>
+<UL>
+  <LI>Removed: The "RAW" reading mode from FileOpen() has been removed.=20
+  <LI>Removed: InetGet("abort"), @InetGetActive and @InetGetBytesRead =
+have been=20
+  removed.=20
+  <LI>Removed: AdlibEnable() and AdlibDisable() have been removed.=20
+  <LI>Removed: OnAutoItStart and OnAutoItExit have been removed. =
+</LI></UL>
+<P><STRONG>AutoIt3Help</STRONG></P>
+<UL>
+  <LI>&nbsp;Fixed #1327: Some keywords would fail to open correctly in =
+rare=20
+  cases. </LI></UL>
+<P><STRONG>UDFs:</STRONG></P>
+<UL>
+  <LI>Changed: _SQLite 3.6.19 -&gt; 3.6.22=20
+  <LI>Fixed #1338: bad _ArrayDisplay() GUI position error.=20
+  <LI>Fixed #1362: _WinAPI_WindowFromPoint() did not work with 64-bit =
+AutoIt.=20
+  <LI>Fixed #1389: _IEAttach() could fail if called multiple times.=20
+  <LI>Fixed #1353: _FileWriteToLine() excessively strict on input text =
+type.=20
+  <LI>Fixed: SQLite.au3 various errors in _SQLite_FetchData, $iCharSize, =
+
+  _SQLite_QuerySingleRow, _SQLite_GetTable2d, _SQLite_Display2DResult by =
+jchd.=20
+  </LI></UL>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P style=3D"FONT-SIZE: small"><B><U>18th December, 2009 - =
+v3.3.2.0</U></B></P>
+<P><STRONG>AutoIt:</STRONG></P>
+<UL>
+  <LI>Added #529: Added the "NAME" property to allow direct search for =
+.NET=20
+  WinForm control names.=20
+  <LI>Added #757: Set defaults for MouseClick()'s x/y parameters.=20
+  <LI>Added #764: Return Pid on ProcessWait() and handle on WinWait(),=20
+  WinWaitActive, WinActivate(), WinActive(), WinMove() when successful.=20
+  <LI>Added #414: better handling of OnAutoItStart/OnAutoItExit, now=20
+  #OnAutoItStartRegister, OnAutoItExitRegister() and =
+OnAutoItExitUnRegister().=20
+  <LI>Added: Better handling of AdlibEnable/AdlibDisable, now =
+AdlibRegister(),=20
+  AdlibUnRegister() and AdlibDisable().=20
+  <LI>Added #351: Reverse PixelSearch().=20
+  <LI>Added #769: FileFlush() function.=20
+  <LI>Added #333: #NoAutoIt3Execute Directive for disabling=20
+  /AutoIt3ExecuteScript or /AutoIt3ExecuteLine.=20
+  <LI>Added #604: $GUI_BKCOLOR_TRANSPARENT can be used with label, =
+group, radio,=20
+  checkbox controls.=20
+  <LI>Added #135: FileSetPos(), FileGetPos() functions for moving the =
+file=20
+  pointer around.=20
+  <LI>Added #582: GUICtrlSetTip() can be used on TabItem controls.=20
+  <LI>Added #699: Shutdown() now return @error=3DGetLastError() when =
+failing.=20
+  <LI>Added #461: StringReplace() from right to left if occurrence &lt;0 =
+as for=20
+  StringInStr().=20
+  <LI>Added: GUICtrlSetColor() and GUICtrlSetBkColor() for Combo =
+Controls.=20
+  <LI>Added: GUI without title bar (no $WS_CAPTION) can be moved with =
+the mouse.=20
+
+  <LI>Added #815: Temporary variables can be passed ByRef.=20
+  <LI>Added #837: FileFindNextFile() set @extended if a directory is =
+returned.=20
+  <LI>Added #839: Shutdown() rewritten and now works properly when run =
+as a=20
+  non-interactive user.=20
+  <LI>Added: Shutdown() now takes an optional reason code.=20
+  <LI>Added #846: _PathFull() now supports strange but valid syntax =
+where drives=20
+  do not have a trailing slash.=20
+  <LI>Added #869: @MUILang macro to help MUI environment scripts.=20
+  <LI>Added #918: Added Quality parameter to GUICtrlSetFont() and =
+GUISetFont().=20
+  <LI>Added: ProcessClose() return info on error.=20
+  <LI>Added: PixelChecksum() extra parameter to select CRC32 instead of =
+ADLER.=20
+  <LI>Added #984: @OSVersion now returns "WIN_XPe" for Windows XP =
+Embedded.=20
+  <LI>Added #938: UDPOpen() flag to allow broadcasting with =
+255.255.255.255.=20
+  <LI>Added: new types to DllCall and DllStruct to avoid confusion with =
+MSDN=20
+  description. That avoid specially X64 errors.=20
+  <LI>Added #351: PixelSearch() now supports both right-to-left and=20
+  bottom-to-top searches.=20
+  <LI>Added #508: Static keyword.=20
+  <LI>Added #1056: New Inet option to by-pass forcing the connection =
+online.=20
+  <LI>Added: DllStructSetData() and DllStructGetData() index parameter =
+now=20
+  supports the Default keyword.=20
+  <LI>Added #1270: GuiSetIcon() now finds suitable large and small =
+icons.=20
+  <LI>Added: HttpSetUserAgent(), InetClose(), InetGetInfo() and =
+InetRead()=20
+  functions.=20
+  <LI>Added: Multiple background downloads are now supported with =
+InetGet().=20
+  <LI>Added #408: New flag for ignoring SSL errors for HTTPS =
+connections.=20
+  <LI>Added #884: Better proxy support with mode 0.=20
+  <LI>Added #949: The user-agent can be changed. </LI></UL>
+<UL>
+  <LI>Fixed: CtrlSetStyle listview on non selected tab.=20
+  <LI>Fixed #763: GUICtrlCreateIcon() create an empty icon on error.=20
+  <LI>Fixed: no mouse move when invalid button used in MouseClick() or=20
+  MouseClickDrag().=20
+  <LI>Fixed #779: infinite loop on Exit due to GUICreate() child badly =
+created.=20
+  <LI>Fixed #774: GuiCtrlSetBkColor() bad label display.=20
+  <LI>Fixed #790: Windows region constant $ERROR rename in $ERRORREGION. =
+
+  <LI>Fixed: StringInStr("aaa", "aa", 2) does not return 0.=20
+  <LI>Fixed #802: Searching for controls by Height property.=20
+  <LI>Fixed: Checkbox or radio painting on tab.=20
+  <LI>Fixed #816: data for GUI date control doc clarification.=20
+  <LI>Fixed #819: Crash with EventLog functions.=20
+  <LI>Fixed #814: InetGet() through a proxy requiring authentication did =
+not=20
+  work.=20
+  <LI>Fixed #813: bad handling of Windows advanced matching for =
+[HANDLE:...] in=20
+  X64 version.=20
+  <LI>Fixed #863: DirMove() extra dot.=20
+  <LI>Fixed #867: UDPRecv() can return from IP/Port.=20
+  <LI>Fixed #886: More explicit documentation that operator =3D=3D is a =
+forced=20
+  string comparison.=20
+  <LI>Fixed #885: Default compared to False returned True instead of =
+False.=20
+  <LI>Fixed #888: Send("{}}") Extra null char.=20
+  <LI>Fixed: DllCall() returning 64-bit int.=20
+  <LI>Fixed: GuiCtrlSetImage() after GUI resized.=20
+  <LI>Fixed: DirMove() return code wrong under XP.=20
+  <LI>Fixed #931: bad GUICtrlSetResizing() for graphic control.=20
+  <LI>Fixed #934: MouseGetCursor() hogging mouse double click.=20
+  <LI>Fixed #615: License updated to be less restrictive.=20
+  <LI>Fixed #919: Remarks added to ConsoleWrite(), ConsoleWriteError() =
+and=20
+  StdinWrite() regarding how those functions handle binary data and =
+non-ANSI=20
+  characters.=20
+  <LI>Fixed #897: Documented that StringToASCIIArray() does not accept =
+binary=20
+  input (convert to a string first).=20
+  <LI>Fixed #937: Bad event handling of Opt("TrayMenuMode",1)=20
+  <LI>Fixed #969: FileFindNextFile() does not set @extended if first =
+found is a=20
+  dir.=20
+  <LI>Fixed #1006: @MSEC returned wrong value for values &lt; 100.=20
+  <LI>Fixed #1010: FileRead() UTF8 with BOM files return too many chars. =
+
+  <LI>Fixed #1013: MDI childs doesn't adjust to parent windows client =
+area.=20
+  <LI>Fixed #1005: TraySetClick(64) =3D hovering.=20
+  <LI>Fixed: ClipPut("") not emptying.=20
+  <LI>Fixed #1068: Binary to Int.=20
+  <LI>Fixed: Bad painting on double GUICtrlSetPos() for label.=20
+  <LI>Fixed #1094: Send("{LSHIFT UP}") stay down.=20
+  <LI>Fixed #1074: Inputbox() positionning on multi monitor.=20
+  <LI>Fixed #1105: disable colored Multiline button not properly =
+displayed.=20
+  <LI>Fixed #1077: GUICtrlSetBkColor() bad recoloring.=20
+  <LI>Fixed #1116: GUICtrlCreateGraphic don't follow ResizeMode.=20
+  <LI>Fixed #1102: Better documentation of the StringInStr() count =
+parameter.=20
+  <LI>Fixed #1161: Removed all documentation references to ColorMode.=20
+  <LI>Fixed #1156: AutoItSetOption()/Opt() now set @error instead of =
+generating=20
+  a fatal error with invalid input.=20
+  <LI>Fixed: Comparing pointers now works correctly.=20
+  <LI>Fixed #906: ActiveX controls were not told what their initial size =
+was.=20
+  <LI>Fixed: Boolean tests on binary strings now behaves properly.=20
+  <LI>Fixed #1234: COM methods that modified boolean arguments could =
+change them=20
+  to ints.=20
+  <LI>Fixed #1258: System menu could display when trying to dismiss a =
+control=20
+  menu.=20
+  <LI>Fixed #1288: Documented how DllStructSetData() and =
+DllStructGetData() work=20
+  with arrays when omitting the index parameter.=20
+  <LI>Fixed #1300: DLLs could unload when calling DllCall() with an =
+invalid=20
+  function.=20
+  <LI>Fixed #1295: Unicode to ANSI conversion was crashing in certain=20
+  situations.=20
+  <LI>Fixed #1304: _GDIPlus_BitmapLockBits() now correctly takes a Width =
+and=20
+  Height parameter instead of a Right and Bottom.=20
+  <LI>Fixed #1294: Fixed AutoIt deadlock when using the following =
+functions with=20
+  hanged windows: WinGetTitle, WinSetTitle, WinGetText, WinFlash, =
+WinSetOnTop=20
+  <LI>Fixed #1332: Mod() forced a conversion to floating point numbers =
+when it=20
+  didn't need to which can cause unexpected output.=20
+  <LI>Fixed #1321: DllStructCreate() did not support _ in data names. =
+Documented=20
+  valid characters for data name.=20
+  <LI>Fixed #1322: Crash when using ControlCommand("GetSelected") on =
+non-Edit=20
+  controls.=20
+  <LI>Fixed #1325: Some date functions could attempt to access an =
+invalid array.=20
+
+  <LI>Fixed #1345: Number() failed to handle numbers with a trailing =
+decimal=20
+  point. </LI></UL>
+<UL>
+  <LI>Changed: It is now possible to read from files opened for writing. =
+
+  <LI>Changed: PCRE regular expression engine updated to 8.00.=20
+  <LI>Changed #899: ShellExecute[Wait]() no longer uses "open" as the =
+default=20
+  verb. See remarks section for those functions for more information.=20
+  <LI>Changed: Inet functions rewritten with the following additions and =
+
+  changes:=20
+  <LI>Removed: Long deprecate URLDownloadToFile() alias for InetGet().=20
+  <LI>Changed: InetGet() returns a handle which must be closed.=20
+  <LI>Changed: @InetGetBytes, @InetGetActive and InetGet("abort") are =
+deprecated=20
+  and will be removed in the future.=20
+  <LI>Changed #968: AutoUpdateIt updated by ProgAndy to use new Inet =
+features.=20
+  <LI>Changed: @YDAY now returns values in the range 001 - 366 instead =
+of 1 -=20
+  366. This makes the macro more consistent with other languages (like =
+C/C++)=20
+  and more consistent with all other date related macros which return =
+strings=20
+  with leading 0s to pad the length. THIS IS A SCRIPT BREAKING CHANGE.=20
+  <LI>Changed #1080: InetGet background downloads now return immediately =
+instead=20
+  of connecting to the remote host first.=20
+  <LI>Changed #1137: RegEnumKey() and RegEnumVal() now correctly return =
+an empty=20
+  string on failure instead of an error message string.=20
+  <LI>Changed: PixelChecksum() can calculate checksums from =
+right-to-left and=20
+  bottom-to-top.=20
+  <LI>Changed: InputBox() no longer requires passing both x and y or w =
+and h.=20
+  <LI>Changed #1056: Added new Inet option to by-pass forcing the =
+connection=20
+  online. </LI></UL>
+<P><STRONG>AutoItX:</STRONG></P>
+<UL>
+  <LI>Removed: ColorMode option removed from AutoItSetOption() =
+</LI></UL>
+<P><STRONG>Au3info:</STRONG></P>
+<UL>
+  <LI>Removed: ColorMode BGR option removed since AutoIt no longer =
+supports the=20
+  option to use BGR mode.=20
+  <LI>Added: Control information now includes the .NET WinForm if =
+available.=20
+  <LI>Added #140: ToolsBar button info. </LI></UL>
+<P><STRONG>Aut2Exe:</STRONG></P>
+<UL>
+  <LI>Fixed #1283: Added new option /x86 to force a 32-bit build and =
+re-added=20
+  /unicode which also forces a 32-bit build. </LI></UL>
+<P><STRONG>Au3check</STRONG></P>
+<UL>
+  <LI>Fixed #1239: Incorrect library search order. </LI></UL>
+<P><STRONG>Others</STRONG></P>
+<UL>
+  <LI>Added #1050: TextPad v5 syntax files installation. </LI></UL>
+<P><STRONG>UDFs:</STRONG></P>
+<UL>
+  <LI>Added: _GDIPlus_BrushGetSolidColor, _GDIPlus_BrushSetSolidColor=20
+  <LI>Added: $tagWIN32_FIND_DATA and corresponding attribute constants.=20
+  <LI>Added #868: _WinAPI_GetLayeredWindowAttributes(),=20
+  _WinAPI_SetLayeredWindowAttributes().=20
+  <LI>Added: _Date_Time_ ... Str() can return date as yyyy/mm/dd.=20
+  <LI>Added #271: FTPEx.au3 for _FTP_...().=20
+  <LI>Added #932: mouse event constants in WinDowsConstants.au3.=20
+  <LI>Added #952: _ArrayDisplay() extra parameter for column header =
+text.=20
+  <LI>Added #957: _Assert() in Debug.au3.=20
+  <LI>Added: _WinAPI_GetGuiResources()=20
+  <LI>Added #981: _WinAPI_WideCharToMultiByte(), =
+_WinAPI_MultiByteToWideChar()=20
+  support IN/OUT as "strings"=20
+  <LI>Added #1157: Encryption functions in Crypt.au3.=20
+  <LI>Added #1128: _WinAPI_PathFindOnPath() in WinAPI.au3.=20
+  <LI>Added #1228: _FTP_SetStatusCallback(), _FTP_DecodeInternetStatus() =
+in=20
+  FTPEx.au3. </LI></UL>
+<UL>
+  <LI>Fixed #755: _FileReadToArray() removing empty end lines.=20
+  <LI>Fixed #773: Doc for _GUICtrlStatusBar_SetParts.=20
+  <LI>Fixed #786: _SQLite_Exec() does not return @error.=20
+  <LI>Fixed #809: _Soundxxx() with first parameter as filename.=20
+  <LI>Fixed #887: Related section based on Tweaky work.=20
+  <LI>Fixed #951: _ArrayDisplay() speed improvement for nb entries =
+&gt;4000.=20
+  <LI>Fixed: _SoundOpen() set @error on MCI Error.=20
+  <LI>Fixed #1015: _SQLite_SaveMode() renamed as _SQLite_SafeMode().=20
+  <LI>Fixed #1016: _WordDocSaveAs() Doc for error handling.=20
+  <LI>Fixed: Sound positioning in case of VBR Format Sound.=20
+  <LI>Fixed #1028: _Clipboard_GetData() fix.=20
+  <LI>Fixed #1031: _Clipboard_SetData() fix.=20
+  <LI>Fixed #1040: _ScreenCapture_Capture() leak memory.=20
+  <LI>Fixed #1026: _Gdiplus_BitmapCreate*() doc examples.=20
+  <LI>Fixed #1092: _Timer_...() datatype for X64.=20
+  <LI>Fixed #1059: Incorrect error handling in _FileListToArray().=20
+  <LI>Fixed #1101: _NowTime(), _NowDate() Doc.=20
+  <LI>Fixed: _WinAPI_GetWindowLong(), _WinAPI_SetWindowLong support X64. =
+
+  <LI>Fixed #1111: Bad grammar in comments for _DateAdd().=20
+  <LI>Fixed: UDF library now uses #include "" instead of #include =
+&lt;&gt;.=20
+  <LI>Fixed #1033: UDF library now has better and more consistent error =
+handling=20
+  when DllCall() is used.=20
+  <LI>Fixed #1215: _ArraySearch() not searching on 2D array.=20
+  <LI>Fixed #1168: _ExcelBookOpen() now selects the first visible =
+worksheet to=20
+  prevent a COM error.=20
+  <LI>Fixed #1247: Documented that some _GUICtrlComboBoxEx_* functions =
+don't=20
+  work with certain ComboBox styles.=20
+  <LI>Fixed #1260: Potential buffer overflow in =
+_WinAPI_GetLastErrorMessage().=20
+  <LI>Fixed #1276: _TicksToTime() incorrectly rounded seconds up.=20
+  <LI>Fixed #1277: Resource clean-up in example script for=20
+  _GDIPlus_ImageGetGraphicsContext.=20
+  <LI>Fixed #1290: Invalid Left coordinate when using=20
+  _GUICtrlTreeView_DisplayRectEx().=20
+  <LI>Fixed #1296: _GUICtrlTreeView_ClickItem() could click outside the=20
+  control's parent window.=20
+  <LI>Fixed #1312: Errors with _GUIImageList_BeginDrag() example.=20
+  <LI>Fixed #1320: _GUIImageList_DragMove() documentation contained a =
+parameter=20
+  that doesn't exist.=20
+  <LI>Changed: _StringBetween removed last optional param (not needed =
+after=20
+  change)(SmOke_N) </LI></UL>
+<UL>
+  <LI>Changed: _StringToHex(), _HexToString() and _StringReverse() have =
+been=20
+  rewritten and are faster.=20
+  <LI>Changed: _SQLite 3.6.7 -&gt; 3.6.19 (SQL statement support UNICODE =
+
+  characters)=20
+  <LI>Changed: _InetGetSource() now uses InetRead(). </LI></UL>
+<UL>
+  <LI>Removed: _StringAddThousandsSep() has been removed. Too many =
+opinions on=20
+  how the function should work means nobody is happy with it.=20
+  <LI>Removed #1112: __WinAPI_Check() has been removed as have all calls =
+to it.=20
+  </LI></UL>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P style=3D"FONT-SIZE: small"><B><U>24th December, 2008 - =
+v3.3.0.0</U></B></P>
+<P><STRONG>AutoIt:</STRONG></P>
+<UL>
+  <LI>Windows 9x and Windows NT 4.0 Operating System support has been =
+removed.=20
+  </LI></UL>
+<UL>
+  <LI>Added: New flag for StringSplit() to not return the count in =
+element 0.=20
+  <LI>Added #328: StringToASCIIArray(), StringFromASCIIArray() =
+functions.=20
+  <LI>Added: New flag to Run()/RunAs() to fix issue #415 (Adds new =
+Constants.au3=20
+  constant: $STDIO_INHERIT_PARENT).=20
+  <LI>Added: New flag to all Run functions for better CUI compatibility =
+(Adds=20
+  new Constants.au3 constant: $RUN_CREATE_NEW_CONSOLE).=20
+  <LI>Added #481: 11 pixel margin around the text in SplashTextOn() =
+(Meets Vista=20
+  UI guidelines).=20
+  <LI>Added #468: Added @MSec macro for obtaining the current =
+milliseconds for=20
+  the current second.=20
+  <LI>Added #277: @CPUArch macro to return the capability of the =
+processor.=20
+  <LI>Added #454: $FO_UTF8 allowing FileOpen() in Read mode for reading =
+UTF8=20
+  files without BOM.=20
+  <LI>Added: $FO_UTF16_LE, $FO_UTF16_BE allowing FileOpen() in Read mode =
+for=20
+  reading UTF16 files without BOM.=20
+  <LI>Added #407: Documented that For...In loops are read-only.=20
+  <LI>Added #645: IniDelete() now supports the Default keyword for the =
+3rd=20
+  parameter. </LI></UL>
+<UL>
+  <LI>Fixed: Send() was incorrectly inserting a leading zero when using =
+the {ASC=20
+  0xNNNN} format.=20
+  <LI>Fixed #305: GUICtrlSetFont() for Combo causing highlight.=20
+  <LI>Fixed #318: GUICtrlSetTip() on TreeViewItem must return 0.=20
+  <LI>Fixed #339: GUICtrlDelete() crashes.=20
+  <LI>Fixed #345: @OSVersion for Windows 2008.=20
+  <LI>Fixed #366: AutoIt crash on bad syntax.=20
+  <LI>Fixed #380: @OSVersion for Windows XP 64-bit Edition.=20
+  <LI>Fixed #346: FileOpenDialog()/FileSaveDialog() filter length limit. =
+
+  <LI>Fixed #387: DllClose() and DllCallbackFree() crashing when an =
+invalid=20
+  handle used.=20
+  <LI>Fixed #449: @SystemDir does not return SysWOW64 under X64 in =
+32-bit mode.=20
+  <LI>Fixed #440: Fatal error when script ends with EOF (0x1A).=20
+  <LI>Fixed #464: Example script for GUICtrlCreateAvi() did not work on =
+Vista.=20
+  <LI>Fixed #484: ObjGet() would crash when invalid files were =
+specified.=20
+  <LI>Fixed #501: ProcessGetStats() failed for processes running as =
+other users=20
+  (including SYSTEM).=20
+  <LI>Fixed #92: DllStruct data truncated with char[]/wchar[].=20
+  <LI>Fixed: GuiCtrlSetState($graphic, $GUI_HIDE) does not hide.=20
+  <LI>Fixed: GuiCtrlSetResizing($graphic, ) not moving.=20
+  <LI>Fixed: GuiCreate(...,Style without caption) does not resize =
+properly.=20
+  <LI>Fixed: GuiSetStyle(caption change) does not resize properly.=20
+  <LI>Fixed: GuiCtrlSetState($listviewitem) does not return error.=20
+  <LI>Fixed #562: Specifying the TITLE property caused all other =
+properties to=20
+  be lost (Window title matching).=20
+  <LI>Fixed #569 TCPRecv() doc example.=20
+  <LI>Fixed #589: Some comparison operators did not return a boolean =
+value.=20
+  <LI>Fixed #583: Bad formatting of @MSEC in documentation.=20
+  <LI>Fixed #574: Using 0 for the SendKeyDelay or SendKeyDownDelay =
+removes the=20
+  respective delay when using Send().=20
+  <LI>Fixed #542: Crash with regular expressions.=20
+  <LI>Fixed #531: Clarification of some of the remarks for =
+GUICtrlSetGraphic().=20
+  <LI>Fixed #539: StringSplit() with flag 2 and no matching delimiters =
+wasn't=20
+  returning the full string.=20
+  <LI>Fixed #601: Tooltip return 0 when title length &gt;99.=20
+  <LI>Fixed #608: listView GUICtrlSetBkColor() not redrawn.=20
+  <LI>Fixed #628: GuiCtrlRead($ctxmenu, $adv) bad return.=20
+  <LI>Fixed #640: PCRE does not support \L, \l, \N, \U, or \u : doc =
+updated=20
+  <LI>Fixed #642: Installer now correctly opens the merged helpfile to =
+the=20
+  history page instead of the AutoIt-only helpfile.=20
+  <LI>Fixed #646: Call() now sets specific @error and @extended values =
+when it=20
+  fails to find a function.=20
+  <LI>Fixed #669: Typo in Dec() example.=20
+  <LI>Fixed #659: Documented that UNC paths are not supported when using =
+
+  FileSelectFolder().=20
+  <LI>Fixed #671: Crash when using $WS_EX_MDICHILD without specifying a =
+valid=20
+  parent.=20
+  <LI>Fixed: Crash when using BinaryToString() with invalid UTF16 input =
+string.=20
+  BinaryToString() now has new @error codes to support diagnosing =
+invalid input.=20
+
+  <LI>Fixed #743: AutoIt Crash when Tray functions are use with invalid =
+ID.=20
+  <LI>Fixed #748: AutoIt Crash with DllCall(0,...). </LI></UL>
+<UL>
+  <LI>Changed #393: Documented that SoundSetWaveVolume() works =
+differently in=20
+  Windows Vista.=20
+  <LI>Changed: PCRE regular expression engine updated to 7.8.=20
+  <LI>Changed: @ProcessorArch changed to @OSArch as it was misleading.=20
+  <LI>Changed: Size limits removed from RegRead() and RegWrite() =
+(previously=20
+  64KB for some registry types).=20
+  <LI>Changed: RegRead() and RegWrite() no longer use hex strings for =
+REG_BINARY=20
+  types - native binary datatypes are enforced. </LI></UL>
+<P><STRONG>AutoItX:</STRONG></P>
+<UL>
+  <LI>Changed: Native DLL: All string methods in the native API are now =
+Unicode.=20
+  The majority of functions no longer have ANSI versions.=20
+  <LI>Added: COM: WinList method.=20
+  <LI>Fixed: Native DLL: Return strings were sometimes incorrectly =
+terminated.=20
+  <LI>Fixed: PixelChecksum() not returning correct values. </LI></UL>
+<P><STRONG>Aut2Exe:</STRONG></P>
+<UL>
+  <LI>Fixed #436: Compression level was ignored when performing =
+compilation from=20
+  the GUI.=20
+  <LI>Added #460: More verbose UPX errors. </LI></UL>
+<P><STRONG>UDFs:</STRONG></P>
+<UL>
+  <LI>Added: _GDIPlus_StringFormatSetAlign=20
+  <LI>Added: _StringExplode()=20
+  <LI>Added: _GDIPlus_ImageGetFlags, =
+_GDIPlus_ImageGetHorizontalResolution,=20
+  _GDIPlus_ImageGetPixelFormat,=20
+  _GDIPlus_ImageGetRawFormat<BR>_GDIPlus_ImageGetType,=20
+  _GDIPlus_ImageGetVerticalResolution=20
+  <LI>Added: _PathGetRelative=20
+  <LI>Added: _ArrayCombinations, _ArrayPermute, _ArrayUnique=20
+  <LI>Added: _WinAPI_CreatePen, _WinAPI_DrawLine, _WinAPI_LineTo,=20
+  _WinAPI_MoveTo, _WinAPI_GetBkMode, _WinAPI_SetBkMode=20
+  <LI>Added: _WinAPI_CombineRgn, _WinAPI_CreateRectRgn,=20
+  _WinAPI_CreateRoundRectRgn, _WinAPI_SetWindowRgn=20
+  <LI>Added: _ExcelHorizontalAlignSet, _ExcelFontSetProperties, =
+_ExcelBookAttach=20
+
+  <LI>Added: _WinAPI_SetEndOfFile, _WinAPI_SetFilePointer=20
+  <LI>Added: Missing FrameConstants.au3=20
+  <LI>Added: Excel UDFs=20
+  <LI>Added: _Timer_GetIdleTime, _WinAPI_GetWindowPlacement,=20
+  _WinAPI_SetWindowPlacement=20
+  <LI>Added #332: Remarks to _GUICtrlStatusBar_Create=20
+  <LI>Added #275: _GDIPlus_GraphicsFillPolygon=20
+  <LI>Added: _GUICtrlTab_ClickTab=20
+  <LI>Added: _GUICtrlComboBoxEx_GetUnicode, =
+_GUICtrlComboBoxEx_SetUnicode=20
+</LI></UL>
+<UL>
+  <LI>Removed: _StringSplit, no longer needed </LI></UL>
+<UL>
+  <LI>Fixed #693: _DateTimeFormat() time format=20
+  <LI>Fixed #701: _GUICtrlListView_ClickItem() Clicks in the wrong place =
+when=20
+  $fMove =3D True=20
+  <LI>Fixed #700: _GUICtrlTreeView_ClickItem() Clicks in the wrong place =
+when=20
+  $fMove =3D True=20
+  <LI>Fixed #703: _GUICtrlListBox_ClickItem() Clicks in the wrong place =
+when=20
+  $fMove =3D True=20
+  <LI>Fixed #705: _GUICtrlToolbar_ClickButton() Clicks in the wrong =
+place when=20
+  $fMove =3D True=20
+  <LI>Fixed #707: _GUICtrlMonthCal_Create() width and height=20
+  <LI>Fixed #674: _GUICtrlTab_ClickTab() Clicks in the wrong place when =
+$fMove =3D=20
+  True=20
+  <LI>Fixed #610: _WinAPI_CreateFile() wrong return value upon failure=20
+  <LI>Fixed #619: _GUICtrlListView_SetItemSelected memory allocation=20
+  <LI>Fixed #617: corrections to six GDI+ ImageGet help file examples=20
+  <LI>Fixed #621: _StringAddThousandsSep don't work with negative number =
+
+  <LI>Fixed #635: _GuiCtrlTab_ClickTab() docs list unused $fPopupScan =
+parameter=20
+  <LI>Fixed #650: Missing BorderConstants.au3=20
+  <LI>Fixed #656: _FileCountLines returns 0 if file only contains 1 line =
+
+  <LI>Fixed #600: _ArraySearch fails with 2D array.=20
+  <LI>Fixed #603: _FileReadToArray() does not return an array if the =
+file=20
+  contains only a single line of text.=20
+  <LI>Fixed #495: _GUICtrlTreeView_GetTree returns only 1 parent=20
+  <LI>Fixed #503: _Date_Time_FileTimeToLocalFileTime example=20
+  <LI>Fixed #510: _GUICtrlListView_ClickItem: If columns inside listview =
+exceed=20
+  visible area, clicks outside of the control=20
+  <LI>Fixed #500: _ChooseColor run on 64bit=20
+  <LI>Fixed #517: WinAPI UDF - bad error checking after DllCall()=20
+  <LI>Fixed #533: Array functions dimension check=20
+  <LI>Fixed: various Timer Functions=20
+  <LI>Fixed #506: _FileCountLines deal with all common line-end-chars=20
+  <LI>Fixed #485: WinAPI missing related links in helpfile=20
+  <LI>Fixed #571: return value doc for _GUICtrlListBox_FindString,=20
+  _GUICtrlListBox_GetAnchorIndex and _GUICtrlListBox_GetText=20
+  <LI>Fixed #586: _GuiCtrlListView_SetGroupInfo() destroyed group ID's.=20
+  <LI>Fixed #516: _ChooseFont run on 64bit=20
+  <LI>Fixed #595: _WinAPI_SetWindowsHookEx help file description of=20
+  $WH_KEYBOARD_LL=20
+  <LI>Fixed #465: _DateTimeSplit if seconds omitted defaulted to -1, now =
+
+  defaults to 0=20
+  <LI>Fixed: Excel Examples=20
+  <LI>Fixed #422: _GDIPlus_GraphicsSetSmoothingMode $iSmooth accepts =
+only 0 - 4,=20
+  doc updated=20
+  <LI>Fixed #388: _GUICtrlToolbar_SetButtonSize Example=20
+  <LI>Fixed #400: SQLite.dll.au3 @ProcessorArch replaced with @OSArch=20
+  <LI>Fixed #390: _viPrintf replaced return type=20
+  <LI>Fixed #371: _GDIPlus_Startup return value=20
+  <LI>Fixed #368: _ArrayToClip return value=20
+  <LI>Fixed #361, #362: _GUICtrlListView_InsertItem doc=20
+  <LI>Fixed #285: _ChooseColor Example=20
+  <LI>Fixed #299: _GUICtrlTab_SetItemText buffer length for Unicode=20
+  <LI>Fixed #292: _EventLog__Clear not clearing log when backup =
+parameter is=20
+  empty=20
+  <LI>Fixed #258: _ClipBoard_GetData=20
+  <LI>Fixed #294: _FileReadToArray where the file contains no @LF=20
+  <LI>Fixed #303: Clock.au3 in Examples\GUI\Advanced=20
+  <LI>Fixed: _GUICtrlListView_SetItemEx text buffer=20
+  <LI>Fixed #320: _WinNet_EnumResource struct pointers=20
+  <LI>Fixed #321: _GUICtrlStatusBar_GetText buffer length for Unicode =
+</LI></UL>
+<UL>
+  <LI>Changed: StringAddThousandsSep params in regards to #442=20
+  <LI>Changed #733: Doc for _GUICtrlButton_SetImageList=20
+  <LI>Changed: _SQLite -&gt; 3.6.7=20
+  <LI>Changed #442: _StringAddThousandsSep() allows for regional =
+settings=20
+  <LI>Changed #290: _GDIPlus_DrawImagePoints=20
+  <LI>Changed: _Soundxxxx functions=20
+  <LI>Changed #599: _FileListToArray speed optimization </LI></UL>
+<P>&nbsp;</P>
+<P style=3D"FONT-SIZE: small"><B><U>12th June, 2008 - =
+v3.2.12.1</U></B></P>
+<P><STRONG>AutoIt:</STRONG></P>
+<UL>
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/branch_3.2.12/docs/autoit/english/htm=
+l/functions/RunAs.htm">RunAs()</A>=20
+  and <A=20
+  =
+href=3D"http://www.autoitscript.com/branch_3.2.12/docs/autoit/english/htm=
+l/functions/RunAsWait.htm">RunAsWait()</A>=20
+  now use @SystemDir as the working directory instead of @WorkingDir =
+when a=20
+  user-supplied working directory is not specified.=20
+  <LI>Fixed: Contextmenuitem not firing events.=20
+  <LI>Fixed: Icon transparency refresh when on tab regression.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/branch_3.2.12/docs/autoit/english/htm=
+l/functions/RunAs.htm">RunAs()</A>=20
+  under Windows 2000. </LI></UL>
+<P>&nbsp;</P>
+<P style=3D"FONT-SIZE: small"><B><U>16th May, 2008 - =
+v3.2.12.0</U></B></P>
+<P><STRONG>AutoIt:</STRONG></P>
+<UL>
+  <LI>Removed: Unnecessary optional parameter from <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ProcessClose.h=
+tm">ProcessClose()</A>.=20
+
+  <LI>Removed: RunAsSet(). (Replaced with <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RunAs.htm">Run=
+As()</A>=20
+  and <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RunAsWait.htm"=
+>RunAsWait()</A>)=20
+
+  <LI>Removed: RunErrorsFatal option ( <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOptio=
+n.htm">Opt()</A>=20
+  ).=20
+  <LI>Removed: ColorMode option ( <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOptio=
+n.htm">Opt()</A>=20
+  ). </LI></UL>
+<UL>
+  <LI>Changed: @Unicode renamed to <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/macros/AutoItRelated.htm=
+">@AutoItUnicode</A>.=20
+  @Unicode is an alias for now. It will be removed &gt; 3.2.14.0=20
+  <LI>Changed: The behavior of <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StdoutRead.htm=
+">StdoutRead()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StderrRead.htm=
+">StderrRead()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StdinWrite.htm=
+">StdinWrite()</A>=20
+  and <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ConsoleRead.ht=
+m">ConsoleRead()</A>=20
+  has been changed.=20
+  <LI>Changed: PCRE regular expression engine updated to 7.6.=20
+  <LI>Changed: AutoIt internet functions (e.g. <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/InetGet.htm">I=
+netGet()</A>)=20
+  now use "AutoIt" as a user-agent. Previously using blank<BR>which was =
+blocked=20
+  by many websites.=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ControlClick.h=
+tm">ControlClick()</A>=20
+  now accepts the same mouse buttons as <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/MouseClick.htm=
+">MouseClick()</A>=20
+  - left/right/middle/primary/secondary/main/menu.=20
+  <LI>Changed: Maximum controls in a GUI window 4093 -&gt; 65532.=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/macros/SystemInfo.htm">@=
+OSVersion</A>=20
+  can now return "WIN_2008" for Windows Server 2008. </LI></UL>
+<UL>
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RunAs.htm">Run=
+As()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RunAsWait.htm"=
+>RunAsWait()</A>.=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUISetAccelera=
+tors.htm">GUISetAccelerators()</A>.=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/windowsadvanced.ht=
+m">REGEXPCLASS</A>=20
+  in Advanced Window and control definitions.=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/windowsadvanced.ht=
+m">X,=20
+  Y, W, H</A> in advanced window/control definitions.=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllCall.htm">D=
+llCall()</A>=20
+  new types int_ptr, uint_ptr, long_ptr, ulong_ptr. Special types that =
+change=20
+  size on x86/x64.=20
+  <LI>Added: "REG_QWORD" type for <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RegWrite.htm">=
+RegWrite()</A>.=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/HotKeySet.htm"=
+>HotKeySet()</A>=20
+  modified to work with the {} notation.=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileReadLine.h=
+tm">FileReadLine(=20
+  ,-1)</A> read last line.=20
+  <LI>Added: Std I/O redirection works with RunAs...().=20
+  <LI>Added: Std I/O merged flag for using the same stream for =
+stdout/stderr.=20
+  <LI>Added: Std I/O supports binary data.=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ConsoleWrite.h=
+tm">ConsoleWrite()</A>/<A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ConsoleWriteEr=
+ror.htm">ConsoleWriteError()</A>=20
+  now return the amount of data written.=20
+  <LI>Added: Remarks in <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/Run.htm">Run()=
+</A>=20
+  about how to close streams/release resources associated with STDIO.=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StdioClose.htm=
+">StdioClose()</A>=20
+  function to force STDIO data closed for a process.=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ProcessClose.h=
+tm">ProcessClose()</A>=20
+  now closes processes started by other users.=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ProcessWaitClo=
+se.htm">ProcessWaitClose()</A>=20
+  returns exitcode in @extended.=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/PixelChecksum.=
+htm">Pixel...()</A>=20
+  can specify a window handle as last parameter.=20
+  <LI>Added: "start" and "count" parameters added to <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StringInStr.ht=
+m">StringInStr()</A>.=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUICtrlSetDefC=
+olor.htm">GUICtrlSetDefColor()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUICtrlSetDefB=
+kColor.htm">GUICtrlSetDefBkColor()</A>.=20
+
+  <LI>Added: Added parent window parameter to <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/MsgBox.htm">Ms=
+gBox()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileSelectFold=
+er.htm">FileSelectFolder()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileOpenDialog=
+.htm">FileOpenDialog()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileSaveDialog=
+.htm">FileSaveDialog()</A>.=20
+  </LI></UL>
+<UL>
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllCall.htm">D=
+llCall()</A>=20
+  setting wrong @error values.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/BlockInput.htm=
+">BlockInput()</A>=20
+  returns errors.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/WinWaitActive.=
+htm">WinWaitActive()</A>=20
+  not matching (more frequent with Windows Vista).=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUICtrlSetStat=
+e.htm">GUICtrlSetState</A>($GUI_SHOW)=20
+  on hidden radio on an active tab.=20
+  <LI>Fixed: SciTe Lite not installed in the AutoIt chosen release =
+directory.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/WinMove.htm">W=
+inMove()</A>=20
+  with Speed =3D 0 crash the script.=20
+  <LI>Fixed: Mysterious UDF return value of 1 when no explicit value was =
+set.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ControlCommand=
+.htm">ControlCommand()</A>,=20
+  "GetLineCount".=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/TraySetState.h=
+tm">TraySetState</A>(4)=20
+  flashing tray icon for Windows Vista.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ProcessExists.=
+htm">ProcessExists()</A>=20
+  wrong return.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StringRegExp.h=
+tm">StringRegExp()</A>=20
+  crashing under Win95.=20
+  <LI>Fixed: Handle leak when using <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/Run.htm">Run()=
+</A>=20
+  with I/O redirection.=20
+  <LI>Fixed: Disabled input control background on tab control.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUICtrlDelete.=
+htm">GUICtrlDelete()</A>=20
+  of a tab if two GUI windows are used.=20
+  <LI>Fixed: AutoIt crash in <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/Random.htm">Ra=
+ndom()</A>=20
+  when range exceeds 2^31.=20
+  <LI>Fixed: #include parsing error detection.=20
+  <LI>Fixed: Array entry passed Byref to a UDF.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileSetTime.ht=
+m">FileSetTime()</A>=20
+  erroneously rounds UP on non NTFS partition.=20
+  <LI>Fixed: STDIO redirection sometimes failed on Windows 9x.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/IniReadSection=
+Names.htm">IniReadSectionNames()</A>=20
+  returning incorrect number of sections under Win9x.=20
+  <LI>Fixed: AutoIt tray icon removal on script exiting.=20
+  <LI>Fixed: AutoIt crash when removing <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ObjEvent.htm">=
+ObjEvent()</A>=20
+  object.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ObjEvent.htm">=
+ObjEvent()</A>=20
+  handler can destroy return of AutoIt Function : as winwait("title") =
+can return=20
+  0.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DirMove.htm">D=
+irMove()</A>=20
+  on different volume.=20
+  <LI>Fixed: Crash with <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RegRead.htm">R=
+egRead()</A>=20
+  and REG_MULTI_SZ on x64.=20
+  <LI>Fixed: Various Edit control focus and DefPushButton issues.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ControlTreeVie=
+w.htm">ControlTreeview()</A>=20
+  returning @error=3D1 on success.=20
+  <LI>Fixed: COM objects could lose numeric precision.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StringReplace.=
+htm">StringReplace()</A>=20
+  with start float number.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ControlCommand=
+.htm">ControlCommand()</A>=20
+  "SelectString" wrong selection.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StringSplit.ht=
+m">StringSplit()</A>=20
+  flag=3D1 delimiters not case sensitive.=20
+  <LI>Fixed: In advanced Window descriptions only semi-colon must be =
+escaped.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ObjGet.htm">Ob=
+jGet()</A>=20
+  memory leak.=20
+  <LI>Fixed: Modified AutoUpdateIt.au3 to work under x64.=20
+  <LI>Fixed: Resizing GUI before <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUISetState.ht=
+m">GUISetState()</A>.=20
+
+  <LI>Fixed: Radio events fired when GUI reactivated.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUICtrlDelete.=
+htm">GUICtrlDelete()</A>=20
+  on contextMenuItem.=20
+  <LI>Fixed: An attempt to <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileDelete.htm=
+">FileDelete()</A>=20
+  a file that was just executed with <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RunWait.htm">R=
+unWait()</A>=20
+  would sometimes fail.=20
+  <LI>Fixed: GUI performance problem when creating a large number of =
+windows.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUIGetCursorIn=
+fo.htm">GuiGetCursorInfo()</A>=20
+  with swapped mouse buttons. </LI></UL>
+<P>&nbsp;</P>
+<P><STRONG>AutoItX:</STRONG></P>
+<UL>
+  <LI>Added: ControlTreeView().=20
+  <LI>Fixed: ControlListView() for native DLL version. </LI></UL>
+<P><STRONG>Aut2Exe:</STRONG></P>
+<UL>
+  <LI>Added: Option to compile scripts as console applications. =
+</LI></UL>
+<P><STRONG>AU3Info:</STRONG></P>
+<UL>
+  <LI>Changed: Controls are always highlighted when using the finder =
+tool.=20
+  <LI>Changed: Controls are not highlighted by default.=20
+  <LI>Changed: Control description gives the advanced version of class =
+and=20
+  instance. </LI></UL>
+<P><STRONG>SciTe "lite":</STRONG></P>
+<UL>
+  <LI>Updated the source to version 1.75=20
+  <LI>Added Save Dialog extension. </LI></UL>
+<P><STRONG>UDFs:</STRONG></P>
+<UL>
+  <LI>See the <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/script_breaking_changes.=
+htm">script=20
+  breaking changes</A> page.<BR></LI></UL>
+<P>&nbsp;</P>
+<P style=3D"FONT-SIZE: small"><B><U>25th November, 2007 - =
+v3.2.10.0</U></B></P>
+<UL>
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllCall.htm">D=
+llCall()</A>=20
+  new method of passing types by reference using *.=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllCall.htm">D=
+llCall()</A>:=20
+  short_ptr, long_ptr, int_ptr types deprecated. Use short*, long* and =
+int*=20
+  respectively.=20
+  <LI>Changed: Limits on <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/Execute.htm">E=
+xecute()</A>=20
+  removed.=20
+  <LI>Changed: PCRE <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StringRegExp.h=
+tm">regular=20
+  expression engine</A> updated to 7.4. </LI></UL>
+<UL>
+  <LI>Added: 64bit (x64) versions of AutoIt, Aut2Exe, Au3Info and =
+AutoItX (see=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/64-bit_support.htm=
+">here</A>).=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllCallbackReg=
+ister.htm">DllCallbackRegister()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllCallbackGet=
+Ptr.htm">DllCallbackGetPtr()</A>=20
+  and <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllCallbackFre=
+e.htm">DllCallbackFree()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllCall.htm">D=
+llCall()</A>=20
+  now accept doubles, int64, uint64, wparam and lparam types.=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/SendKeepActive=
+.htm">SendKeepActive()</A>.=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ControlTreeVie=
+w.htm">ControlTreeView()</A>.=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ProcessGetStat=
+s.htm">ProcessGetStats()</A>.=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/VarGetType.htm=
+">VarGetType()</A>.=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/macros/AutoItRelated.htm=
+">@AutoItX64</A>=20
+  macro.=20
+  <LI>Added: Au3Info: Handle info for windows and controls.=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllStructCreat=
+e.htm">DllStructCreate()</A>=20
+  added "align" keyword to set structure alignment. </LI></UL>
+<UL>
+  <LI>Fixed: Control...() functions using CLASS and TEXT together =
+sometimes=20
+  incorrect.=20
+  <LI>Fixed: Control...() functions using CLASSNN sometimes incorrect.=20
+  <LI>Fixed: Windows Vista taskbar previews causing problems with =
+windows=20
+  matching.=20
+  <LI>Fixed: $var =3D $var was not giving an error when $var didn't =
+already exist.=20
+
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUICtrlSetImag=
+e.htm">GUICtrlSetImage()</A>=20
+  sizing regression from 3.2.4.9.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUICtrlCreateL=
+istView.htm">GUICtrlCreateListView()</A>=20
+  with no column.=20
+  <LI>Fixed: Extra notification on colored button.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/IniReadSection=
+Names.htm">IniReadSectionNames()</A>=20
+  for [] sections.=20
+  <LI>Fixed: Opt("WinTitleMatchMode", Default) fatal error.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUICtrlSetStyl=
+e.htm">GUICtrlSetStyle()</A>=20
+  with $ES_READONLY bad $WS_TABSTOP.=20
+  <LI>Fixed: AutoIt crash on exit if Win...() used with a Title being a =
+COM=20
+  object.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ProcessExists.=
+htm">ProcessExists()</A>=20
+  on service process under Win2K.=20
+  <LI>Fixed: DefPushButton behavior.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ControlCommand=
+.htm">ControlCommand</A>(SelectString)=20
+  order selection.=20
+  <LI>Fixed: Array cannot have 2^24 entries.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUICtrlCreateM=
+enu.htm">GuiCreateMenu()</A>=20
+  on a windows without title and without client area.=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/WinWaitActive.=
+htm">WinWaitActive()</A>=20
+  sometimes failing after a WinActivate().=20
+  <LI>Fixed: Looping <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/GUIRegisterMsg=
+.htm">GUIRegisterMsg()</A>=20
+  doesn't unregister.=20
+  <LI>Fixed: Focus on ES_READONLY edit control.=20
+  <LI>Fixed: Numerous UDF fixes.<BR></LI></UL>
+<P>&nbsp;</P>
+<P><B><U>10th September, 2007 - v3.2.8.1</U></B></P>
+<UL>
+  <LI>Fixed: Possible crash with StringRegExp(). </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>8th September, 2007 - v3.2.8.0</U></B></P>
+<UL>
+  <LI>Changed: General speed improvements (currently up to 24% in some =
+cases=20
+  compared to 3.2.6.0).=20
+  <LI>Changed: PCRE regular expression engine updated to 7.3.=20
+  <LI>Changed: Recursion-based code limits relaxed. </LI></UL>
+<UL>
+  <LI>Added: wchar type added to DllStructCreate().=20
+  <LI>Added: WinMove() speed parameter. </LI></UL>
+<UL>
+  <LI>Fixed: Crash on AutoIt exit if TrayCreateItem() is not deleted.=20
+  <LI>Fixed: AutoIt crash on bad parameter when calling TrayCreateMenu() =
+
+  <LI>Fixed: Character positions used in StringRegExp() not correct for=20
+  characters &gt; 127 (accents, non-Western)=20
+  <LI>Fixed: ProcessExist() under Windows 9x.=20
+  <LI>Fixed: GUISetState(@SW_DISABLE) not disabling keyboard input.=20
+  <LI>Fixed: Sometimes AutoIt crashes on DllStructGetData() with char[] =
+types.=20
+  <LI>Fixed: Au3Info restoring last settings at startup.=20
+  <LI>Fixed: Better handling of notifications when using colored =
+buttons.=20
+  <LI>Fixed: ControlGetText() crash on Scite windows.=20
+  <LI>Fixed: $LVSCW_AUTOSIZE column truncates display string.=20
+  <LI>Fixed: Incorrect listview creation with GUICtrlCreateListView().=20
+  <LI>Fixed: Memory leak when AutoIt needed to get long file name.=20
+  <LI>Fixed: ListviewItem not created after other child Window=20
+  creation/deletion.=20
+  <LI>Fixed: ControlGetFocus() returning bad ClassNN values.=20
+  <LI>Fixed: Detection of invalid CONTINUELOOP statement. </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>24th August, 2007 - v3.2.6.0</U></B></P>
+<UL>
+  <LI>Changed: IconId in all GUI functions is now the same as=20
+  GUICtrlSetImage().<BR><BR>WARNING: Previous scripts using =
+GUICtrlSetImage(),=20
+  GUISetIcon(), TraySetIcon() and TraySetPauseIcon() <BR>may display a =
+wrong=20
+  Icon. To get the same icon "if nId &gt; 0 Then newId =3D - nId - 1". =
+</LI></UL>
+<UL>
+  <LI>Changed: AutoIt .a3x and compiled script format. Exe2Aut will only =
+
+  decompile 3.2.5.1<BR>and earlier files. No ExeAut utility is supplied =
+for=20
+  ongoing versions.=20
+  <LI>Changed: General performance improvements (currently around 30-40% =
+over=20
+  3.2.4.9)=20
+  <LI>Changed: Limited Unicode support added in regular expressions.=20
+  <LI>Changed: ControlMove() just resizing as WinMove() if =
+X=3DY=3DDefault.=20
+  <LI>Changed: PCRE engine updated from 7.0 to 7.1=20
+  <LI>Changed: Suppress delay when speed=3D0 in MouseMove(). </LI></UL>
+<UL>
+  <LI>Added: GUIGetStyle().=20
+  <LI>Added: byte and ubyte type to DllCall().=20
+  <LI>Added: ClassnameNN in control and summary info in Au3Info.=20
+  <LI>Added: Float type to dllCall. (Thanks PaulIA)=20
+  <LI>Added: AU3Check v1.54.8 support for both =
+"#AutoIt3Wrapper_plugin_funcs"=20
+  and "#Compiler_plugin_funcs".=20
+  <LI>Added: Extra parameter in ProcessClose() to close Stream handles. =
+</LI></UL>
+<UL>
+  <LI>Fixed: AutoIt crash on WinWait("","text") when a Scite is open.=20
+  <LI>Fixed: Some crashes on Chinese systems during Unicode/ANSI =
+conversions.=20
+  <LI>Fixed: Aut2Exe crashing on Chinese systems when running in ANSI.=20
+  <LI>Fixed: Wrong Notification on {ENTER} after clicking on a =
+listviewItem.=20
+  <LI>Fixed: Wrong resetting of image on listviewitems if image set on =
+the=20
+  listview.=20
+  <LI>Fixed: Resizing of listview control.=20
+  <LI>Fixed: @error not set on bad WinGetPos() return.=20
+  <LI>Fixed: LVM_EDITLABEL hogging cpu.=20
+  <LI>Fixed: AutoIt (non UNICODE version) crash with some COM objects.=20
+  <LI>Fixed: GUISetState() on GUI with W=3D0 or H=3D0.=20
+  <LI>Fixed: GUI control Tip not reappearing after a click or timeout.=20
+  <LI>Fixed: GUI controls not at the right position if a Control menu is =
+in use.=20
+
+  <LI>Fixed: EnvUpdate() in UNICODE AutoIt version not working since =
+3.2.3.3.=20
+  <LI>Fixed: FileRead(..., count) returning count-1 chars.=20
+  <LI>Fixed: Unicode filenames in FileInstall().=20
+  <LI>Fixed: LVS_EX_HEADERDRAGDROP extendedstyle.=20
+  <LI>Fixed: UpDown control shows through tabbed pages.=20
+  <LI>Fixed: GUICtrlSetState on UPDOWN control without changing the =
+state.=20
+  <LI>Fixed: FileInstall() in compiled scripts causing GUI problems.=20
+  <LI>Fixed: ControlGetFocus() on control not created with AutoIt GUI.=20
+  <LI>Fixed: @AutoItPID and processlist coherency under Win9x.=20
+  <LI>Fixed: GUICtrlSetResizing not returning error on non resizable =
+control.=20
+  <LI>Fixed: Regression for ControlSend SHIFTDOWN/UP since 3.2.3.13.=20
+  <LI>Fixed: Drag and drop on a listview control after clicking on its =
+header.=20
+  <LI>Fixed: Support "resource only" dlls for GUISetImage().=20
+  <LI>Fixed: Default minimum for GUICtrlSetLimit() set to 0.=20
+  <LI>Fixed: Z order after GUICtrlSetStyle() on edit or input control.=20
+  <LI>Fixed: FileReadLine() getting bad cached data when reading =
+specific line=20
+  numbers with file handles.=20
+  <LI>Fixed: Slight lag in GUIGetMsg() under certain circumstances.=20
+  <LI>Fixed: StringReplace() and occurances parameter.=20
+  <LI>Fixed: GuiCtrlSetFont() on Tab control.=20
+  <LI>Fixed: Leading blanks before #include cannot be compiled.=20
+  <LI>Fixed: Notification on ENTER on Colored button.=20
+  <LI>Fixed: RegWrite() setting bad registry entry in certain =
+circumstances.=20
+  <LI>Fixed: AutoIt hogging CPU when text msgbox too big.=20
+  <LI>Fixed: ControlSend() sometime to wrong control when using empty =
+controlid.=20
+
+  <LI>Fixed: ProcessExists() under Win2K with processname &gt;15 chars.=20
+  <LI>Fixed: Int() with string comparison wrong match.=20
+  <LI>Fixed: InetGetSize() in unicode version returns 0.=20
+  <LI>Fixed: GUICtrlCreateListview() with more than 254 columns.=20
+  <LI>Fixed: AutoIt Crash on recursive RegExp.=20
+  <LI>Fixed: BitRotate() with left bit set.=20
+  <LI>Fixed: Filemove() returning 1 without any move.=20
+  <LI>Fixed: FileRead() returning chr(0) in ANSI mode.=20
+  <LI>Fixed: Au3Info control coords relative to client.=20
+  <LI>Fixed: StringInStr() not returning 0 when searching backward and =
+search=20
+  length greater than string. </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>25th May, 2007 - v3.2.4.9</U></B></P>
+<UL>
+  <LI>Added: StringCompare() </LI></UL>
+<UL>
+  <LI>Fixed: Basic string comparisons were not working with locale as in =
+
+  previous versions. </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>23rd May, 2007 - v3.2.4.8</U></B></P>
+<UL>
+  <LI>Fixed: Errors with non-western codepages and ANSI format scripts. =
+</LI></UL>
+<P>&nbsp;</P>
+<P><B><U>22nd May, 2007 - v3.2.4.7</U></B></P>
+<UL>
+  <LI>Added: Aut2Exe options for forcing ANSI mode compilation (/ansi =
+and=20
+  /unicode)=20
+  <LI>Added: StringToBinary()=20
+  <LI>Added: Additional unicode related options for BinaryToString() =
+</LI></UL>
+<P>&nbsp;</P>
+<P><B><U>20th May, 2007 - v3.2.4.6</U></B></P>
+<UL>
+  <LI>Fixed: StringReplace() and occurances parameter. </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>20th May, 2007 - v3.2.4.5</U></B></P>
+<UL>
+  <LI>Added: BinaryToString() for binary buffer to ANSI string quick=20
+  conversions.=20
+  <LI>Added: @Unicode macro to show if AutoIt is being run in Unicode or =
+ANSI=20
+  mode. </LI></UL>
+<UL>
+  <LI>Changed: StringReplace() speeded up - a lot.=20
+  <LI>Changed: Au3Info is now resizable. </LI></UL>
+<UL>
+  <LI>Fixed: Chr(0) now properly works with Binary() </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>17th May, 2007 - v3.2.4.4</U></B></P>
+<UL>
+  <LI>Fixed: Chr(0) now acting more sensible (now acts in a similar way =
+to=20
+  VBScript). </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>17th May, 2007 - v3.2.4.3</U></B></P>
+<UL>
+  <LI>Fixed: FileRead() not working properly with unicode files. =
+</LI></UL>
+<P>&nbsp;</P>
+<P><B><U>15th May, 2007 - v3.2.4.2</U></B></P>
+<UL>
+  <LI>Changed: Au3Info graphical tweaks and Summary tab. </LI></UL>
+<UL>
+  <LI>Fixed: FileReadLine() getting bad cached data when reading =
+specific line=20
+  numbers with file handles.=20
+  <LI>Fixed: Slight lag in GUIGetMsg() under certain circumstances. =
+</LI></UL>
+<P>&nbsp;</P>
+<P><B><U>13th May, 2007 - v3.2.4.1</U></B></P>
+<UL>
+  <LI>Added: ChrW() and AscW() for unicode operations. </LI></UL>
+<UL>
+  <LI>Fixed: Chr() and Asc() for character codes 128-255 in unicode =
+mode.=20
+  <LI>Fixed: Unicode BOM was not being written in file append modes if =
+the file=20
+  was empty.=20
+  <LI>Fixed: Error in Include\GuiCombo.au3 and Include\IE.au3. =
+</LI></UL>
+<P>&nbsp;</P>
+<P><B><U>10th May, 2007 - v3.2.4.0</U></B></P>
+<P>&nbsp;</P>
+<P>Big changes: </P>
+<UL>
+  <LI>AutoIt is now compiled for Unicode! AutoIt3.exe is Unicode - =
+AutoIt3A.exe=20
+  is ANSI. For more details see this <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/unicode.htm">page<=
+/A>.=20
+  <LI>Au3Info tool rewritten.=20
+  <LI>Binary data functions completely rewritten - scripts using these =
+functions=20
+  will need to be changed. </LI></UL>
+<P>Other changes: </P>
+<UL>
+  <LI>Added: New modes for FileOpen() to force Unicode and binary =
+operations.=20
+  <LI>Added: BinaryLen(), BinaryMid()=20
+  <LI>Added: Colored GUI buttons.=20
+  <LI>Added: DllStruct...() can reference elements by name rather than =
+index.=20
+  </LI></UL>
+<UL>
+  <LI>Changed: Removed restrictions on the maximum number of #include=20
+  directives.=20
+  <LI>Changed: Removed restrictions on the maximum number of DllOpen() =
+handles.=20
+  <LI>Changed: Removed restrictions on the maximum number of open files. =
+
+  <LI>Changed: Removed restrictions on the maximum number of hotkeys.=20
+  <LI>Changed: Performance improvements in StringStripWS().=20
+  <LI>Changed: Binary data in variants are now treated as a special =
+type,=20
+  separate from normal strings.=20
+  <LI>Changed: BinaryString() renamed to Binary()=20
+  <LI>Changed: IsBinaryString() renamed to IsBinary()=20
+  <LI>Changed: ControlClick() can now click a control at a certain =
+position.=20
+  <LI>Changed: ControlClick() can now properly simulate double-clicks.=20
+  <LI>Changed: ControlClick() no longer forces the activation of the =
+parent=20
+  window (up to the user now).=20
+  <LI>Changed: ControlClick() related coordinates added to Au3Info.=20
+  <LI>Changed: Improved the searches that can be done for=20
+  windows/controls/instances.=20
+  <LI>Changed: From DEFAULT_QUALITY to PROOF_QUALITY for Change/Set Font =
+
+  functions.=20
+  <LI>Changed: x^y compatible with C99 standard. </LI></UL>
+<UL>
+  <LI>Fixed: Possible crash when using StringStripWS(), flag 4 and empty =
+
+  strings.=20
+  <LI>Fixed: GUICtrlSetLimit() for UpDown controls wher min =3D max.=20
+  <LI>Fixed: GuiCtrlSetTip() not always working correctly.=20
+  <LI>Fixed: Slow GUI tab redrawing under Windows Vista fixed.=20
+  <LI>Fixed: HotKeySet bad notification.=20
+  <LI>Fixed: FileGetAttrib() on pagefile.sys.=20
+  <LI>Fixed: Invalid default parameter in GUICtrlSetData() not detected. =
+
+  <LI>Fixed: Assign does return error on array element.=20
+  <LI>Fixed: FileOpen("test.txt", 2+8) returning error.=20
+  <LI>Fixed: Error detection in Enum statement.=20
+  <LI>Fixed: Opt("WinTitleMatchMode").=20
+  <LI>Fixed: Stack corruption resulting from improper use of DllCall() =
+now=20
+  gracefully aborts the script instead of hard crashing.=20
+  <LI>Fixed: Crash when reading empty REG_MULTI_SZ.=20
+  <LI>Fixed: Round() not returning an integer.=20
+  <LI>Fixed: ControlSend() to empty "" ctrl fixed for inactive window. =
+Also=20
+  shift state behavior.=20
+  <LI>Fixed : O^(-1).=20
+  <LI>Fixed: Non detection of illegal statement.=20
+  <LI>Fixed: HotKeySet("^{PAUSE]",... notification.=20
+  <LI>Fixed: {CTRLBREAK} -&gt;{BREAK} as ctrl is user responsability.=20
+  <LI>Fixed: $var =3D Default passed as parameter to Com object.=20
+  <LI>Fixed: Edit control would always have focus the first time the GUI =
+was=20
+  displayed even if it shouldn't. This behavior also ignored $GUI_FOCUS. =
+
+  <LI>Fixed: range value for seed Number in SRandom().=20
+  <LI>Fixed: Fileread crash if no count in raw mode.=20
+  <LI>Fixed: Opt("WinTitleMatchMode", &lt;0) really matching case =
+insensitive.=20
+  <LI>Fixed: FileSetAttrib/FileSetTime wrong setting.=20
+  <LI>Fixed: Execute/Call recursive overflow display error message.=20
+  <LI>Fixed: Aut2exe warning message if icon not found.=20
+  <LI>Fixed: WinGetTitle() returns 1 on error.=20
+  <LI>Fixed: Memory leak on keyword variable deallocation. </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>19th December, 2006 - v3.2.2.0</U></B></P>
+<UL>
+  <LI>Added: StringRegExp() and StringRegExpReplace() regular expression =
+support=20
+  (Perl compatible)=20
+  <LI>Added: Regular expression support for Window title matching.=20
+  <LI>Added: ShellExecute() and ShellExecuteWait() functions.=20
+  <LI>Added: #RequireAdmin for UAC/Windows Vista=20
+  <LI>Added: Windows vista help file entry. </LI></UL>
+<UL>
+  <LI>Added: GuiCtrlSetState() $GUI_DROPNOTACCEPTED.=20
+  <LI>Added: $GUI_FOCUS, $GUINOFOCUS for listviewitem control.=20
+  <LI>Added: IsDllStruct()=20
+  <LI>Added: SRandom() to set seed for random number generation.=20
+  <LI>Added: WinTitleMatchMode for case insensitive matching.=20
+  <LI>Added: Listview Alternate coloring with $GUI_BKCOLOR_LV_ALTERNATE. =
+
+  <LI>Added: IconId can be referenced by ordinal value if negative =
+1-based index=20
+  is used.=20
+  <LI>Added: CompiledScript string file info for compiled script.=20
+  <LI>Added: Support &gt;32x32 icon from .exe/.dll in GUICtrlCreateIcon =
+or=20
+  GUICtrlSetImage.=20
+  <LI>Added: Expanded GUICtrlSetTip() to allow creation of tooltips with =
+titles,=20
+  icons and using the balloon tip style.=20
+  <LI>Added: Tooltip supports Default keyword.=20
+  <LI>Added: Remark added to _PathSplit() mentioning that it does not =
+accept=20
+  command line strings, only paths.=20
+  <LI>Added: 2 UDF's to GUIStatusBar.au3.=20
+  <LI>Added: GUICtrlCreateIcon and GUICtrlSetImage can select in =
+multiple icon=20
+  file by name.=20
+  <LI>Added: @KBLayout to retrieve the current keyboard configuration.=20
+  <LI>Added: ToolTip() option to ensure the tooltip is always displaying =
+on a=20
+  monitor.=20
+  <LI>Added: IniWriteSection() function.=20
+  <LI>Added: @extended error code on DriveMapAdd error.=20
+  <LI>Added: Listview Alternate coloring with $GUI_BKCOLOR_LV_ALTERNATE. =
+
+</LI></UL>
+<UL>
+  <LI>Changed: Performance improvements (up to 100% on some scripts!).=20
+  <LI>Changed: @error set to WinAPI GetLastError() for Run().=20
+  <LI>Changed: Small tweak to Floor() to ensure it is not as susceptible =
+to=20
+  floating point precision errors.=20
+  <LI>Changed: Small tweak to Ceiling() to ensure it is not as =
+susceptible to=20
+  floating point precision errors.=20
+  <LI>Changed: PixelChecksum() is now over 30x faster.=20
+  <LI>Changed: FileGetVersion() extra parameter to retrieve string file =
+info.=20
+  </LI></UL>
+<UL>
+  <LI>Fixed: MsgBox() timeout on Windows Vista.=20
+  <LI>Fixed: GuiCtrlRead on listview control when sorted.=20
+  <LI>Fixed: @OSVERSION on Windows 9x.=20
+  <LI>Fixed: GuiGetCursorInfo() with Handle not retrieving mouse click =
+info.=20
+  <LI>Fixed: DllCall() crashes when using uint, ushort.=20
+  <LI>Fixed: List control height when font size changes.=20
+  <LI>Fixed: GUICtrlSetImage() not testing icon on error.=20
+  <LI>Fixed: @ScriptDir equal @WorkingDir for rootdir (x:\).=20
+  <LI>Fixed: GUIGetCursorInfo() (winhandle) when child not active.=20
+  <LI>Fixed: _StringAddComma().=20
+  <LI>Fixed: drag &amp; drop $GUI_EVENT_DROPPED notififation on edit =
+control.=20
+  <LI>Fixed: Coherency of type parameter for DLLCall() and =
+DLLSructCreate()=20
+  <LI>Fixed: Default keyword didn't always work correctly with COM =
+objects.=20
+  <LI>Fixed: COM property write fails when using arguments.=20
+  <LI>Fixed: Send/ControlSend for US international keyboard.=20
+  <LI>Fixed: Send/ControlSend char&gt;=3Dchr(128) for english keyboards. =
+
+  <LI>Fixed: COM property write fails when using arguments.=20
+  <LI>Fixed: MsgBox() with task modal flag left GUI's disabled on =
+timeout.=20
+  <LI>Fixed: Error reporting by messagebox even with /ErrorStdOut.=20
+  <LI>Fixed: GUICtrlSetImage default icon value for Icon Ctrl.=20
+  <LI>Fixed: GUIRegisterMSG() destroyed @error.=20
+  <LI>Fixed: $LVS_SORTASCENDING with GUICtrlSetImage icon gave bad =
+display.=20
+  <LI>Fixed: Some Object Collections could not be parsed in one AutoIt=20
+  statement.=20
+  <LI>Fixed: Bad screen updating of already unchecked radiobuttons.=20
+  <LI>Fixed: Tray icon tooltip not displaying the scriptname when =
+compiled.=20
+  <LI>Fixed: UDP... return code on error.=20
+  <LI>Fixed: UDPRecv() crashed on bad parameter.=20
+  <LI>Fixed: COM was corrupting floating point values.=20
+  <LI>Fixed: GUICtrlSetState doc remarks about menu control.=20
+  <LI>Fixed: Refresh after a GUICtrlSetBkColor().=20
+  <LI>Fixed: Crash on line begining with ~ : "Unable to parse line".=20
+  <LI>Fixed: IniReadSectionNames() returned bogus data in Windows 98 =
+when the=20
+  INI file was empty or did not exist.=20
+  <LI>Fixed: @compiled when the script is compiled.=20
+  <LI>Fixed: Send() to italian keyboard.=20
+  <LI>Fixed: MouseMove() in secondary screen.=20
+  <LI>Fixed: StringInStr() not converting to string search parameter.=20
+  <LI>Fixed: Int() of a binarystring.=20
+  <LI>Fixed: ControlSend sending() special characters.=20
+  <LI>Fixed: Crash in Au3exe with badly formed input file in =
+FileInstall().=20
+  <LI>Fixed: Wrong execution of a compiled script containing =
+FileInstall()=20
+  inside #CS-#CE.=20
+  <LI>Fixed: FileInstall() referencing a file without any path will =
+reference it=20
+  from the ScriptDir to be coherent with the compiled script.=20
+  <LI>Fixed: Aut2exe crashed using cmdline with shortnames.=20
+  <LI>Fixed: Tooltip state (such as icon or title) was showing up on =
+subsequent=20
+  tooltips that didn't want those items. This affected both ToolTip() =
+and=20
+  GUICtrlSetTip().)=20
+  <LI>Fixed: GUIRegisterMSG() destroy @error.=20
+  <LI>Fixed: $LVS_SORTASCENDING with GUICtrlSetImage() icon bad display. =
+
+  <LI>Fixed: Wrong default arguments for _ArrayToString().=20
+  <LI>Fixed: Bad "#" instruction inhibit whole script. </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>13th August, 2006 - v3.2.0.1</U></B></P>
+<UL>
+  <LI>Fixed: (AU3INFO) Buffer overrun in control code.=20
+  <LI>Fixed: Exe2Aut.exe was missing its digital signature. </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>12th August, 2006 - v3.2.0</U></B></P>
+<UL>
+  <LI>Added: COM object support.=20
+  <LI>Added: "Lite" version of the SciTE editor added into the AutoIt=20
+  installation.=20
+  <LI>Added: Aut2Exe can now create .a3x encoded files (similar to .zip =
+for=20
+  .au3).=20
+  <LI>Added: Support for custom tray icons.=20
+  <LI>Added: "default" keyword.=20
+  <LI>Added: IsKeyword() so "default" keyword can be used as parameter =
+in a user=20
+  function call.=20
+  <LI>Added: Boolean support and keywords of 'false' and 'true'.=20
+  <LI>Added: IsBool()=20
+  <LI>Added: +=3D, -=3D, *=3D, /=3D operators.=20
+  <LI>Added: DLLCall() cdecl and stdcall support.=20
+  <LI>Added: DLLStruct... functions.=20
+  <LI>Added: Limited TCP and UDP functions.=20
+  <LI>Added: Added support for reading and writing stdio.=20
+  <LI>Added: ConsoleRead(), ConsoleWriteError().=20
+  <LI>Added: Ability to initialize arrays in DIM and CONST keywords.=20
+  <LI>Added: Switch, EndSwitch structure.=20
+  <LI>Added: HWnd() and IsHWnd() functions.=20
+  <LI>Added: BinaryString(), IsBinaryString() functions.=20
+  <LI>Added: FileCreateNTFSLink().=20
+  <LI>Added: /AutoIt3ExecuteScript command line option.=20
+  <LI>Added: Call() now supports parameters.=20
+  <LI>Added: Execute()=20
+  <LI>Added: @HotKeyPressed macro.=20
+  <LI>Added: Unary NOT operations on strings are now allowed. A NOT =
+operation on=20
+  a non-empty string will result in FALSE.=20
+  <LI>Added: Beep() and WinFlash() functions.=20
+  <LI>Added: Floor() and Ceiling() functions.=20
+  <LI>Added: SetError can optionally set @extended.=20
+  <LI>Added: RegRead, RegEnumVal return the type of the value in =
+@extended.=20
+  <LI>Added: FileSaveDialog(), FileOpenDialog() supports multiple filter =
+groups.=20
+
+  <LI>Added: @ScriptLineNumber, @ProcessorArch, @AutoItPID.=20
+  <LI>Added: BitRotate().=20
+  <LI>Added: Fileopen(), FileCopy(), FileMove() additional flags to =
+create non=20
+  existent subfolders.=20
+  <LI>Added: FileRead(), FileWrite() work with binary files.=20
+  <LI>Added: (GUI) GUICtrlSetData text for treeview.=20
+  <LI>Added: (GUI) $WS_EX_MDICHILD support for GUICreate().=20
+  <LI>Added: (GUI) GUICtrlCreateGraphic(), GUICtrlSetGraphic().=20
+  <LI>Added: (GUI) Opt('GUIEventOptions',1) to suppress window action =
+when=20
+  clicking on Minimize,restore or Maximize buttons.=20
+  <LI>Added: (GUI) Right-click support for List/Treeview GUI control.=20
+  <LI>Added: (GUI) GuiCtrlRead return ControlID if=20
+  Opt("GUIEventCompatibilityMode',2).=20
+  <LI>Added: (GUI) GUICtrlCreateMonthCal().=20
+  <LI>Added: (GUI) Opt("GUIDataSeparatorChar",...).=20
+  <LI>Added: (GUI) GUICtrlCreateObj().=20
+  <LI>Added: (GUI) GUICtrlSetColor(), GUICtrlSetBkColor(), =
+GUICtrlSetImage() for=20
+  ListviewItem controls.=20
+  <LI>Added: (GUI) GuiSwitch tabitemID optional parameter to allow =
+dynamic=20
+  control creation on a tabitem.=20
+  <LI>Added: (GUI) GuiCtrlListView support Icon view.=20
+  <LI>Added: (GUI) $GUI_WS_EX_PARENTDRAG Allow the label or pic control =
+to be=20
+  used as the title bar to drag the whole the parent window.=20
+  <LI>Added: (GUI) GUICtrlGetHandle().=20
+  <LI>Added: (GUI) $GUI_EVENT_DROPPED @GUI_DRAGID,@GUI_DROPID.=20
+  <LI>Added: (GUI) GuiSetCursor(16),GuiCtrlSetCursor(16) hide the =
+cursor.=20
+  <LI>Added: (GUI) Allow Dragfile to any control. @GUI_DRAGFILE contain =
+the=20
+  filename to be used in the $GUI_EVENT_DROPPED.=20
+  <LI>Added: (GUI) GUIRegisterMsg() to work with GUI WM_Message-routines =
+at=20
+  runtime.=20
+  <LI>Added: (GUI) GUICtrlRegisterListViewSort() to create a real =
+sorting=20
+  routine for GUI ListView's.=20
+  <LI>Added: (GUI) Icons for tab items.=20
+  <LI>Added: (AU3INFO) AutoIt Windows Info : Now shows Style and exStyle =
+values=20
+  for the controls. </LI></UL>
+<UL>
+  <LI>Changed: #include search algorithm modified.=20
+  <LI>Changed: The /c command line option has been replaced by=20
+  /AutoIt3ExecuteLine.=20
+  <LI>Changed: RegEnumKey and RegEnumVal return more precise @error to =
+help=20
+  diagnostic.=20
+  <LI>Changed: Return,@error, @extended have to be explicit to be return =
+by an=20
+  UDF.=20
+  <LI>Changed: FileFindFirstFile no longer returns "." or "..".=20
+  <LI>Changed: Set _ to be a continuation character ONLY after =
+whitespace.=20
+  <LI>Changed: FileClose with an invalid handle no longer triggers an =
+AutoIt=20
+  runtime error.=20
+  <LI>Changed: Fatal error message is now displayed if DLLCall cannot be =
+
+  executed.=20
+  <LI>Changed: RegEnumKey and RegEnumVal return more precise @error =
+values to=20
+  help diagnostics.=20
+  <LI>Changed: "OnAutoItExit" function is now called on system shutdown =
+or user=20
+  logoff.=20
+  <LI>Changed: Opt() with just the "option" will now return the current =
+value=20
+  for that option.=20
+  <LI>Changed: DllCall @error is set when function not found.=20
+  <LI>Changed: SplashTextOn() opt=3D32 to center vertically.=20
+  <LI>Changed: (GUI) GUICtrlCreateList now forces the style LBS_NOTIFY.=20
+  <LI>Changed: (GUI) GUICtrlCreateIcon default size is 32x32.=20
+  <LI>Changed: (AU3INFO) The default setting on Au3info was changed so =
+that it=20
+  doesn't highlight controls. </LI></UL>
+<UL>
+  <LI>Fixed: Many fixes - See the the technical <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/autoit_changelog.txt">Ch=
+angelog</A>.=20
+  </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>7th Apr, 2005 - v3.1.1</U></B></P>
+<P>Minor bugfix release.</P>
+<UL>
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/macros/SystemInfo.htm">@=
+OSVersion</A>=20
+  did not work for Windows Server 2003=20
+  <LI>Fixed: $LVS_EX_FULLROWSELECT in GUIConstants.au3 was incorrectly =
+defined=20
+  as $LBS...=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/macros/TimeAndDate.htm">=
+@YDAY</A>=20
+  was incorrect (one day out)=20
+  <LI>Fixed: SetError(), SetExtended() can return a value.=20
+  <LI>Fixed: GUICtrlCreateMonthCal positioning.=20
+  <LI>Fixed: CmdLine[] limited to 63 parameters.=20
+  <LI>Fixed: FileSetAttrib return 1 on non existing file.=20
+  <LI>Fixed: Filecopy not creating subdir under Netware shared. =
+</LI></UL>
+<P>&nbsp;</P>
+<P><B><U>7th Feb, 2005 - v3.1.0</U></B></P>
+<UL>
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/guiref/GUIRef.htm">GUI</=
+A>=20
+  creation capabilities=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllCall.htm">D=
+llCall()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllOpen.htm">D=
+llOpen()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DllClose.htm">=
+DllClose()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ControlListVie=
+w.htm">ControlListView()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/WinList.htm">W=
+inList()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DirGetSize.htm=
+">DirGetSize()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/IniReadSection=
+Names.htm">IniReadSectionNames()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/IniReadSection=
+.htm">IniReadSection()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/InetGet.htm">I=
+netGet()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/InetGetSize.ht=
+m">InetGetSize()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/HttpSetProxy.h=
+tm">HttpSetProxy()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FtpSetProxy.ht=
+m">FtpSetProxy()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOptio=
+n.htm#FtpBinaryMode">FtpBinaryMode=20
+  (Option)</A>=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/Ping.htm">Ping=
+()</A>=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ControlGetHand=
+le.htm">ControlGetHandle()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/WinGetProcess.=
+htm">WinGetProcess()</A>=20
+  and <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ProcessList.ht=
+m">ProcessList()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/SetExtended.ht=
+m">SetExtended()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/WinSetTrans.ht=
+m">WinSetTrans()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/Assign.htm">As=
+sign()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ConsoleWrite.h=
+tm">ConsoleWrite()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/macros/AutoItRelated.htm=
+">@AutoItExe</A>=20
+  macro=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/keywords/Dim.htm">Const<=
+/A>=20
+  keyword=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/keywords/Func.htm">Optio=
+nal</A>=20
+  parameter support for user functions=20
+  <LI>Added: "main", "primary", "menu", "secondary" added as valid <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/MouseClick.htm=
+">mouse=20
+  button types</A>=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOptio=
+n.htm#ExpandVarStrings">ExpandVarStrings=20
+  (Option)</A>=20
+  <LI>Added: The user functions OnAutoItStart() and OnAutoItExit() are =
+called=20
+  during startup/exit=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOptio=
+n.htm#OnExitFunc">OnExitFunc=20
+  (Option)</A> </LI></UL>
+<UL>
+  <LI>Removed: URLDownloadToFile() (Replaced by <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/InetGet.htm">I=
+netGet()</A>)=20
+  </LI></UL>
+<UL>
+  <LI>Changed: <A=20
+  href=3D"http://www.autoitscript.com/autoit3/docs/keywords/For.htm">For =
+loops</A>=20
+  automatically declare the counter variable as a Local variable=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/IniDelete.htm"=
+>IniDelete()</A>=20
+  can also delete entire sections=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StringReplace.=
+htm">StringReplace()</A>=20
+  also returns the number of replacements in the @extended macro=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StringMid.htm"=
+>StringMid()</A>=20
+  the "count" parameter is now optional (assumes remainder of the =
+string)=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/PixelChecksum.=
+htm">PixelChecksum()</A>=20
+  now has optional step parameter=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/controls.htm">Cont=
+rol...()</A>=20
+  functions now accept the Control ID as an extra way to identify a =
+control=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/InetGet.htm">I=
+netGet()</A>=20
+  function can download in the background=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RegRead.htm">R=
+eg...()</A>=20
+  functions no longer give a hard error when an unknown key is used.=20
+  <LI>Changed: The <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOptio=
+n.htm#MouseCoordMode">mouse</A>=20
+  and <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOptio=
+n.htm#PixelCoordMode">pixel</A>=20
+  functions now have an additional "client area" mode=20
+  <LI>Changed: Added WIN_2003 to the possible values for <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/macros/SystemInfo.htm">@=
+OS_VERSION</A>=20
+
+  <LI>Changed: AU3Spy.exe renamed to <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/au3spy.htm">AU3Inf=
+o.exe</A>=20
+
+  <LI>Changed: Major upgrades to the <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/au3spy.htm">AutoIt=
+ Window=20
+  Info Tool </A>(control highlighting, magnify, cursor IDs)=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileSelectFold=
+er.htm">FileSelectFolder()</A>=20
+  supports an initial directory as well as a root directory=20
+  <LI>Changed: File functions no longer give fatal errors when -1 is =
+used as a=20
+  handle </LI></UL>
+<UL>
+  <LI>Fixed: Memory leak in <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/SplashImageOn.=
+htm">SplashImageOn()</A>=20
+
+  <LI>Fixed: Expressions like "$var =3D $var" will now give an error if =
+the=20
+  variable wasn't previously defined=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StringFormat.h=
+tm">StringFormat()</A>=20
+  with \\ characters=20
+  <LI>Fixed: Under rare situations after closing a script AutoIt3.exe =
+would=20
+  still appear in task manager for a while=20
+  <LI>Fixed: Certain paths like <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/macros/Directory.htm">@W=
+indowsDir</A>=20
+  were incorrect under Windows Terminal Server=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileSetTime.ht=
+m">FileSetTime()</A>=20
+  systems in non-GMT timezones had incorrect results=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileMove.htm">=
+FileMove()</A>=20
+  with UNC paths (does a real move when in the same dir rather than a =
+copy).=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/lang_operators.htm=
+">^=20
+  operator</A>=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/Chr.htm">Chr()=
+</A>=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StatusbarGetTe=
+xt.htm">StatusBarGetText()</A>=20
+  failed when used with no "Text" parameter=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/InputBox.htm">=
+InputBox()</A>=20
+  didn't return focus to the previously active window=20
+  <LI>Fixed: ACos() bad result.=20
+  <LI>Fixed: Under certain conditions, GUICtrlSetPos() could cause a =
+label to=20
+  appear as if it had been painted multiple times. </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>4th Aug, 2004 - v3.0.102</U></B></P><BR>
+<P><STRONG>Major Change:</STRONG> Colors now default to the standard RGB =
+format=20
+rather than the previous BGR format. This affects <A=20
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/PixelSearch.ht=
+m">PixelSearch()</A>=20
+and <A=20
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/PixelGetColor.=
+htm">PixelGetColor()</A>.</P>
+<P>The "<A=20
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOptio=
+n.htm#ColorMode">ColorMode</A>"=20
+option has been added to allow old scripts to run with the old BGR mode, =
+
+just<BR>place this line at the top of your script to use the old method, =
+
+e.g.:</P>
+<P><A=20
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOptio=
+n.htm#ColorMode">Opt</A>("ColorMode",=20
+1)</P>
+<P><STRONG>If you use color functions in your code you MUST take notice =
+of the=20
+above change and either change the colors in your code OR add the Opt =
+ColorMode=20
+option as shown above. This especially affects BOTs and code that =
+interacts with=20
+games. </STRONG></P>
+<UL>
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DriveMapAdd.ht=
+m">DriveMapAdd()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DriveMapDel.ht=
+m">DriveMapDel()</A>=20
+  and <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/DriveMapGet.ht=
+m">DriveMapGet()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/macros/AutoItRelated.htm=
+">@SW_SHOWDEFAULT,=20
+  @SW_SHOWMAXIMIZED, @SW_SHOWMINIMIZED, @SW_SHOWMINNOACTIVE, =
+<BR>@SW_SHOWNA,=20
+  @SW_SHOWNOACTIVATE, @SW_SHOWNORMAL</A>=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileGetShortcu=
+t.htm">FileGetShortcut()</A>=20
+
+  <LI>Added: Predefined <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/running.htm">$CmdL=
+ineRaw</A>=20
+  variable now holds the original command line in full=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/macros/AutoItRelated.htm=
+">@DesktopDepth</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/keywords/ReDim.htm">ReDi=
+m</A>=20
+  <LI>Added: More command line params for <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/compiler.htm">Aut2=
+Exe.exe</A>:=20
+  /nodecompile and /comp 0-4 (compression level, 4=3Dbest)=20
+  <LI>Added: Process ID (PID) support for <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ProcessExists.=
+htm">Process...()</A>=20
+  and <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/Run.htm">Run()=
+</A>=20
+  functions=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ProcessSetPrio=
+rity.htm">ProcessSetPriority()</A>=20
+
+  <LI>Added: Decompiler (Exe2Aut) added=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/PixelChecksum.=
+htm">PixelChecksum()</A>=20
+
+  <LI>Added: Strings starting with "0x" are converted from hex when used =
+
+  numerically=20
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/MouseWheel.htm=
+">MouseWheel()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RegEnumKey.htm=
+">RegEnumKey()</A>=20
+  and <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RegEnumVal.htm=
+">RegEnumVal()</A>=20
+
+  <LI>Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileRecycleEmp=
+ty.htm">FileRecycleEmpty()</A>=20
+  </LI></UL>
+<UL>
+  <LI>Changed: TimerStart() renamed to <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/TimerInit.htm"=
+>TimerInit()</A>.=20
+  TimerStop() renamed to <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/TimerDiff.htm"=
+>TimerDiff()</A>=20
+
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileSelectFold=
+er.htm">FileSelectFolder()</A>=20
+  flag parameter changed=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RegRead.htm">R=
+EG_MULTI_SZ</A>=20
+  values in Reg...() functions allow double NULL values=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/BitOR.htm">Bit=
+Or()</A>,=20
+  <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/BitAND.htm">Bi=
+tAnd()</A>=20
+  and <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/BitXOR.htm">Bi=
+tXOR()</A>=20
+  take up to 255 parameters=20
+  <LI>Changed: Icon and windowstate options added to <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileCreateShor=
+tcut.htm">FileCreateShortcut()</A>=20
+
+  <LI>Changed: RunAsSet() supports extra profile handling options=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/RegWrite.htm">=
+RegWrite()</A>=20
+  now accepts just the keyname in order to create a keyname with no =
+value=20
+  <LI>Changed: "Allow Decompilation" option added to <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/compiler.htm">Aut2=
+Exe</A>=20
+
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/intro/compiler.htm">Aut2=
+Exe</A>=20
+  gives feedback during compilation and gives the option to abort=20
+  <LI>Changed: Compiled scripts run/extract much faster when using =
+FileInstall=20
+  and medium/large files=20
+  <LI>Changed: Max number of user function limits removed=20
+  <LI>Changed: Max number of variable limits removed=20
+  <LI>Changed: -1 does no sleep at all for Send/Mouse delays (<A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOptio=
+n.htm#SendKeyDelay">SendKeyDelay</A>,=20
+  etc...)=20
+  <LI>Changed: Optional occurance parameter added to <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StringInStr.ht=
+m">StringInStr()</A>=20
+
+  <LI>Changed: Optional default filename added to <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileOpenDialog=
+.htm">FileOpenDialog()</A>=20
+  and <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileSaveDialog=
+.htm">FileSaveDialog()</A>=20
+
+  <LI>Changed: Registry functions accept 4 letters keys (HKLM instead of =
+
+  HKEY_LOCAL_MACHINE, etc.)=20
+  <LI>Changed: Remote registry keys are accepted in the form=20
+  "\\computername\key\subkey"=20
+  <LI>Changed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/AutoItSetOptio=
+n.htm">AutoItSetOption</A>=20
+  returns the previous setting </LI></UL>
+<UL>
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/FileGetSize.ht=
+m">FileGetSize()</A>=20
+  works on &gt;2GB files and in-use files=20
+  <LI>Fixed: The expression: If "non-blank" And 1 - now evaluates as =
+true=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/ToolTip.htm">T=
+oolTip()</A>=20
+  when the mouse is near the bottom of the screen=20
+  <LI>Fixed: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/StringIsDigit.=
+htm">StringIsDigit()</A>=20
+
+  <LI>Fixed: Process...() functions under NT4 unable to see certain =
+processes=20
+  <LI>Fixed: Some keywords incorrectly allowed after a THEN keyword =
+</LI></UL>
+<P>&nbsp;</P>
+<P><B><U>11th Mar, 2004 - v3.0.101</U></B></P>
+<UL>
+  <LI>&nbsp;Added: <A=20
+  =
+href=3D"http://www.autoitscript.com/autoit3/docs/functions/MemGetStats.ht=
+m">MemGetStats()</A>=20
+
+  <LI>&nbsp;Fixed: Windows 95a compatibility=20
+  <LI>&nbsp;Fixed: Minor help file typos </LI></UL>
+<P>&nbsp;</P>
+<P><B><U>29th Feb, 2004 - v3.0.100</U></B></P>
+<UL>
+  <LI>&nbsp;Initial release </LI></UL></BODY></HTML>
+
+------=_NextPart_000_0000_01CC7F67.39D410A0
+Content-Type: text/css;
+	charset="gb2312"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.autoitscript.com/autoit3/docs/css/default.css
+
+BODY {
+	FONT-WEIGHT: normal; FONT-SIZE: x-small; COLOR: #000000; FONT-FAMILY: =
+Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; =
+BACKGROUND-COLOR: #ffffff
+}
+TABLE {
+	FONT-SIZE: x-small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif, =
+"MS sans serif"
+}
+TR {
+	FONT-SIZE: x-small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif, =
+"MS sans serif"
+}
+TD {
+	FONT-SIZE: x-small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif, =
+"MS sans serif"
+}
+B {
+	FONT-WEIGHT: bold
+}
+P {
+	MARGIN-TOP: 0.5em; MARGIN-BOTTOM: 0.5em; LINE-HEIGHT: normal; =
+FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif, "MS sans serif"
+}
+DIV {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif, "MS sans serif"
+}
+A {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif, "MS sans serif"; =
+TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #000099; FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif,"MS =
+sans serif"; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #000088; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif, "MS =
+sans serif"; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #000099; FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif,"MS =
+sans serif"; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #6666cc; FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif,"MS =
+sans serif"; TEXT-DECORATION: underline
+}
+A.ext:link {
+	COLOR: #990000; FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif,"MS =
+sans serif"; TEXT-DECORATION: underline
+}
+A.ext:visited {
+	COLOR: #880000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif, "MS =
+sans serif"; TEXT-DECORATION: underline
+}
+A.ext:active {
+	COLOR: #990000; FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif,"MS =
+sans serif"; TEXT-DECORATION: underline
+}
+A.ext:hover {
+	COLOR: #cc6666; FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif,"MS =
+sans serif"; TEXT-DECORATION: underline
+}
+H1 {
+	FONT-SIZE: small; BACKGROUND-IMAGE: =
+url(../images/blue_gradient_1024x24.jpg); COLOR: #ffffff; LINE-HEIGHT: =
+normal; BACKGROUND-REPEAT: repeat-y; FONT-FAMILY: Verdana, Arial, =
+Helvetica, sans-serif, "MS sans serif"
+}
+H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: small; COLOR: #000080; LINE-HEIGHT: =
+normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif, "MS sans =
+serif"
+}
+H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; COLOR: #000080; LINE-HEIGHT: =
+normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif, "MS sans =
+serif"
+}
+.code {
+	FONT-SIZE: x-small; FONT-FAMILY: "Courier New", Courier, mono; =
+WHITE-SPACE: nowrap
+}
+.codeheader {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 16px; BORDER-TOP: =
+#aaaaaa 1px solid; PADDING-LEFT: 16px; FONT-SIZE: x-small; =
+PADDING-BOTTOM: 16px; BORDER-LEFT: #aaaaaa 1px solid; COLOR: #000000; =
+PADDING-TOP: 16px; BORDER-BOTTOM: #aaaaaa 1px solid; FONT-FAMILY: =
+Courier New, Courier, Verdana, Arial; WHITE-SPACE: normal; =
+BACKGROUND-COLOR: #ffffaa
+}
+.codebox {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: =
+#aaaaaa 1px solid; PADDING-LEFT: 8px; FONT-SIZE: x-small; =
+PADDING-BOTTOM: 8px; BORDER-LEFT: #aaaaaa 1px solid; COLOR: #465584; =
+PADDING-TOP: 8px; BORDER-BOTTOM: #aaaaaa 1px solid; FONT-FAMILY: Courier =
+New, Courier, Verdana, Arial; WHITE-SPACE: normal; BACKGROUND-COLOR: =
+#f0f5fa
+}
+.S0 {
+	BACKGROUND: #f0f5fa; COLOR: #000000
+}
+.S1 {
+	BACKGROUND: #f0f5fa; COLOR: #009933; FONT-STYLE: italic
+}
+.S2 {
+	BACKGROUND: #f0f5fa; COLOR: #669900; FONT-STYLE: italic
+}
+.S3 {
+	BACKGROUND: #f0f5fa; COLOR: #004040
+}
+.S4 {
+	BACKGROUND: #f0f5fa; COLOR: #000080; FONT-STYLE: italic
+}
+.S5 {
+	BACKGROUND: #f0f5fa; COLOR: #0000ff
+}
+.S6 {
+	BACKGROUND: #f0f5fa; COLOR: #800000
+}
+.S7 {
+	BACKGROUND: #f0f5fa; COLOR: #008080
+}
+.S8 {
+	BACKGROUND: #f0f5fa; COLOR: #000000
+}
+.S9 {
+	BACKGROUND: #f0f5fa; COLOR: #5a5a5a
+}
+.S10 {
+	BACKGROUND: #f0f5fa; COLOR: #d97200
+}
+.S11 {
+	BACKGROUND: #f0f5fa; COLOR: #0000ff; FONT-STYLE: italic
+}
+.S12 {
+	BACKGROUND: #f0f5fa; COLOR: #a00ff0; FONT-STYLE: italic
+}
+.S15 {
+	FONT-WEIGHT: bold; BACKGROUND: #f0f5fa; COLOR: #0080ff; FONT-STYLE: =
+italic
+}
+SPAN {
+	BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: 'Courier New'
+}
+.experimental {
+	BORDER-RIGHT: red solid; PADDING-RIGHT: 4px; BORDER-TOP: red solid; =
+PADDING-LEFT: 4px; FONT-WEIGHT: bold; FONT-SIZE: large; BACKGROUND: =
+lightyellow; PADDING-BOTTOM: 4px; BORDER-LEFT: red solid; PADDING-TOP: =
+4px; BORDER-BOTTOM: red solid
+}
+
+------=_NextPart_000_0000_01CC7F67.39D410A0--

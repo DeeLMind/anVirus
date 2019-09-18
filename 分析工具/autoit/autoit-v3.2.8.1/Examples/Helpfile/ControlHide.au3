@@ -1,1 +1,0 @@
-ControlHide("Untitled -", "", "MDIClient1")

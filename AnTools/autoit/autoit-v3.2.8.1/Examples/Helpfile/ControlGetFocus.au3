@@ -1,0 +1,1 @@
+$a = ControlGetFocus("Untitled - Notepad")

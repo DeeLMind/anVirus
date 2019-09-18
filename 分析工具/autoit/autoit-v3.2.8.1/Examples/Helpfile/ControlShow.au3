@@ -1,1 +1,0 @@
-ControlShow("Untitled -", "", "MDIClient1")

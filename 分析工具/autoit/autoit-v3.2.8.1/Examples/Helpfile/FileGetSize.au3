@@ -1,1 +1,0 @@
-$size = FileGetSize("AutoIt.exe")

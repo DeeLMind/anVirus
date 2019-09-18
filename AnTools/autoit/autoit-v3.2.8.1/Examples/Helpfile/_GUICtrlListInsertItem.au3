@@ -1,0 +1,44 @@
+#include <GUIConstants.au3>
+#include <GuiList.au3>
+
+Opt ('MustDeclareVars', 1)
+
+Dim $msg, $ret
+Dim $input, $listbox, $button, $label, $button2
+
+GUICreate("ListBox Insert Item Demo", 400, 250, -1, -1)
+GUICtrlCreateLabel("Enter item to add", 25, 15)
+$input = GUICtrlCreateInput("", 125, 10, 180, 25)
+
+$listbox = GUICtrlCreateList("", 125, 40, 180, 120)
+GUICtrlSetData($listbox, "test1|more testing|even more testing|demo|")
+$button = GUICtrlCreateButton("Insert", 85, 160, 120, 40)
+$button2 = GUICtrlCreateButton("Append", 215, 160, 120, 40)
+$label = GUICtrlCreateLabel("Item #", 150, 210, 120)
+
+GUISetState()
+While 1
+	$msg = GUIGetMsg()
+	Select
+		Case $msg = $GUI_EVENT_CLOSE
+			ExitLoop
+		Case $msg = $button
+			If (StringLen(GUICtrlRead($input)) > 0) Then
+				$ret = _GUICtrlListInsertItem ($listbox, GUICtrlRead($input), 2)
+				If ($ret < 0) Then
+					MsgBox(16, "Error", "Error (" & $ret & ") from _GUICtrlListInsertItem")
+				Else
+					GUICtrlSetData($label, "Item #: " & $ret)
+				EndIf
+			EndIf
+		Case $msg = $button2
+			If (StringLen(GUICtrlRead($input)) > 0) Then
+				$ret = _GUICtrlListInsertItem ($listbox, GUICtrlRead($input))
+				If ($ret < 0) Then
+					MsgBox(16, "Error", "Error (" & $ret & ") from _GUICtrlListInsertItem")
+				Else
+					GUICtrlSetData($label, "Item #: " & $ret)
+				EndIf
+			EndIf
+	EndSelect
+WEnd
