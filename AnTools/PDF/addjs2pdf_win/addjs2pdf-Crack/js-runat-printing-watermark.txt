@@ -1,0 +1,40 @@
+this.addWatermarkFromText({
+	cText: "Show ME on Printout",
+	nTextAlign:app.constants.align.center,
+	cFont: "Helvetica-Bold",
+	nFontSize:72,
+	aColor: color.blue,
+	nStart: this.pageNum,
+	nOpacity: 0.5,
+	bOnScreen: false,
+	nRotation: 45
+});
+
+var date = new Date();
+var month = (date.getMonth()+1) > 9 ? (date.getMonth()+1) : "0" + (date.getMonth()+1);
+var day = (date.getDate()) > 9 ? (date.getDate()) : "0" + (date.getDate());
+var hours = (date.getHours()) > 9 ? (date.getHours()) : "0" + (date.getHours());
+var minutes = (date.getMinutes()) > 9 ? (date.getMinutes()) : "0" + (date.getMinutes());
+var seconds = (date.getSeconds()) > 9 ? (date.getSeconds()) : "0" + (date.getSeconds());
+
+var dateString = 
+    month + "/" + 
+    day + "/" + 
+    date.getFullYear() + " " + 
+    hours + ":" + 
+    minutes + ":" + 
+    seconds;
+    
+var cMyText = "copyright \xa9 " + dateString;
+this.addWatermarkFromText({
+	cText: cMyText,
+	nFontSize:30,
+	nHorizAlign:app.constants.align.left,
+	nHorizValue: 36, // 1/2 inch from left
+	nVertAlign:app.constants.align.bottom,
+	nVertValue: 18,
+	aColor: color.red,
+	bOnScreen: false,
+});
+
+this.dirty = false;

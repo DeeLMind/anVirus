@@ -1,0 +1,5 @@
+EXPORTS
+	JBIG2Decode
+	FaxDecode
+	AsciiHexDecode
+	FreeBuffer

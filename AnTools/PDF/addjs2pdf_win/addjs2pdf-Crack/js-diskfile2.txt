@@ -1,0 +1,11 @@
+var TEMP_FIELD_NAME = "testHeader"
+try{
+		// export field name and value to defined file
+		this.exportAsText({aFields: TEMP_FIELD_NAME, cPath: "/d/temp/test-text.txt"});
+}
+catch(e)
+{
+		app.alert( e);
+}
+// remove text field
+this.removeField(TEMP_FIELD_NAME);

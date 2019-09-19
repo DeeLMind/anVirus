@@ -1,0 +1,27 @@
+/* Create a bookmark report */
+
+function PrintBookmark(Report, Bm, nLevel)
+{
+
+	// write a name of the bookmark	
+        var inch = 72;  
+	Report.writeText(Bm.name);
+
+	// process children
+	if (Bm.children != null)
+	{	
+		Report.indent(inch/2);
+		for (var i = 0; i < Bm.children.length; i++)
+		{	
+			PrintBookmark(Report, Bm.children[i], nLevel + 1);
+		}
+		Report.outdent(inch/2);
+	}
+}
+
+var root = this.bookmarkRoot;
+var Report = new Report();
+PrintBookmark(Report, root, 0);
+
+// Change output path for the report
+Report.save("/c/myreport.pdf");

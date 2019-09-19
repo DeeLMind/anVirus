@@ -1,0 +1,6 @@
+// set up output text
+var TEMP_FIELD_NAME = "testHeader"
+var textValue = "test";
+// add a temporary text field
+var f = this.addField(TEMP_FIELD_NAME, "text", 0, [30,30,100,20]);
+f.value = textValue;

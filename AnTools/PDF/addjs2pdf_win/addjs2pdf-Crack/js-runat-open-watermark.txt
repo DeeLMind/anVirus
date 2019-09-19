@@ -1,0 +1,35 @@
+this.addWatermarkFromText({
+	cText: "DRAFT\n\nCOPY",
+	nTextAlign:app.constants.align.center,
+	cFont: "Helvetica-Bold",
+	nFontSize:120,
+	aColor: color.red,
+	nStart: this.pageNum,
+	nOpacity: 0.5,
+	bOnScreen: true
+});
+
+this.addWatermarkFromText({
+	cText: "Show ME on Printout",
+	nTextAlign:app.constants.align.center,
+	cFont: "Helvetica-Bold",
+	nFontSize:72,
+	aColor: color.blue,
+	nStart: this.pageNum,
+	nOpacity: 0.5,
+	bOnScreen: false,
+	nRotation: 45
+});
+
+var cMyText = "copyright \xa9 " + util.printd("MM/dd/yyyy HH:mm:ss", new Date);
+this.addWatermarkFromText({
+	cText: cMyText,
+	nFontSize:10,
+	nHorizAlign:app.constants.align.left,
+	nHorizValue: 36, // 1/2 inch from left
+	nVertAlign:app.constants.align.bottom,
+	nVertValue: 36, // 1/2 inch above bottom
+	aColor: color.green
+});
+
+this.dirty = false;

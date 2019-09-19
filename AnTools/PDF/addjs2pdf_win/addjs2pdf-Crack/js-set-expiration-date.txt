@@ -1,0 +1,58 @@
+this.zoomType = zoomtype.fitP;
+CheckDoc();
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+function CheckDoc()
+{
+		//if (HasExpired1(2))
+		if (HasExpired2())
+		{
+				CreateBigButton("ExpireButton", 0);
+		  	this.dirty = false;
+				var strMsg = "This Document has Expired. Would you like to close this document?";
+				if(this.app.alert(strMsg,2,2) == 4)
+						this.closeDoc()
+		}
+		else
+		{
+				app.alert("This document has not expired.");
+		}
+}
+function HasExpired1(NumDays)
+{
+		var Now = new Date();
+		var DifDays = (Now - this.modDate)/(1000*60*60*24);
+		return (DifDays>NumDays);
+}
+function HasExpired2()
+{
+    // Get the current date and time 
+		var rightNow = new Date();
+    // Setup End Date 
+		var endDate = new Date("January 1, 2008");
+    if(rightNow > endDate)
+    {
+    		return true;
+		}
+		return false;
+}
+
+function CreateBigButton(cName, nPage)
+{
+		var pgRect = this.getPageBox("Crop", nPage);
+		var oFld = this.addField( cName , "button", nPage, pgRect);
+		if(oFld != null)
+		{
+			oFld.display = display.visible;
+			oFld.buttonSetCaption("Sorry, you cannot view this page\nbecause this files has expired.");
+			oFld.borderStyle = border.b;
+			oFld.strokeColor = color.blue;
+			oFld.textColor = color.black;
+			oFld.fillColor = color.gray;
+			oFld.lineWidth = 5;
+			oFld.setAction("MouseUp", "app.launchURL('http://www.verypdf.com/', true);" );
+		}
+		return oFld;
+}

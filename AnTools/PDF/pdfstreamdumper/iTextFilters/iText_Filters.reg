@@ -1,0 +1,32 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\Record\{501FD99A-EE3F-3959-A794-E7F0BCA841EF}\1.0.0.0]
+"Class"="iTextFilters.mDecoders"
+"Assembly"="iTextFilters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v2.0.50727"
+
+[HKEY_CLASSES_ROOT\iTextFilters.MemDecoder]
+@="iTextFilters.MemDecoder"
+
+[HKEY_CLASSES_ROOT\iTextFilters.MemDecoder\CLSID]
+@="{A7DE7F92-DE54-34F4-9CDC-276762D2D1C4}"
+
+[HKEY_CLASSES_ROOT\CLSID\{A7DE7F92-DE54-34F4-9CDC-276762D2D1C4}]
+@="iTextFilters.MemDecoder"
+
+[HKEY_CLASSES_ROOT\CLSID\{A7DE7F92-DE54-34F4-9CDC-276762D2D1C4}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="iTextFilters.MemDecoder"
+"Assembly"="iTextFilters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v2.0.50727"
+
+[HKEY_CLASSES_ROOT\CLSID\{A7DE7F92-DE54-34F4-9CDC-276762D2D1C4}\InprocServer32\1.0.0.0]
+"Class"="iTextFilters.MemDecoder"
+"Assembly"="iTextFilters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v2.0.50727"
+
+[HKEY_CLASSES_ROOT\CLSID\{A7DE7F92-DE54-34F4-9CDC-276762D2D1C4}\ProgId]
+@="iTextFilters.MemDecoder"
+
+[HKEY_CLASSES_ROOT\CLSID\{A7DE7F92-DE54-34F4-9CDC-276762D2D1C4}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]

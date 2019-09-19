@@ -1,0 +1,56 @@
+////////////////////////////////////////////////////////////////////////////////////////////
+//
+//
+// VeryPDF Javascript to PDF Adder Command Line
+//
+//
+////////////////////////////////////////////////////////////////////////////////////////////
+
+var pgRect = this.getPageBox("Crop", 0);
+
+////////////////////////////////////////////////////////////////////////////////////////////
+var rectWatermark = [];
+rectWatermark[0] = pgRect[0];    //Left
+rectWatermark[1] = pgRect[1]-50; //Top
+rectWatermark[2] = pgRect[2]; //Right
+rectWatermark[3] = rectWatermark[1]-100; //Bottom
+CreateWatermarkBeforePrinting("Printing_Watermark", 0, rectWatermark, "Demo Watermark on Printing", 30);
+////////////////////////////////////////////////////////////////////////////////////////////
+rectWatermark[0] = pgRect[0];    //Left
+rectWatermark[1] = 70; //Top
+rectWatermark[2] = pgRect[2]; //Right
+rectWatermark[3] = rectWatermark[1]-50; //Bottom
+var oNow = new Date(); // get the JS date time object
+var sText = "Printed on "; // date lead in text
+sText += util.printd("mmmm d, yyyy", oNow); // formatted date string
+sText += " at ";
+sText += util.printd("h:MM tt", oNow); // formatted time string
+CreateWatermarkBeforePrinting("Printing_ShowDate", 0, rectWatermark, "Printing Date is: " + sText, 20);
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+function CreateWatermarkBeforePrinting(cName, nPage, rectItem, strText, strTextSize)
+{
+		var oFld = this.addField(cName, "text", nPage, rectItem);
+		if(oFld != null)
+		{
+				oFld.value 				= strText;
+				oFld.textColor 		= color.red;
+				//oFld.strokeColor 	= color.blue;
+				//oFld.borderStyle 	= border.b;
+				oFld.lineWidth 		= 0;
+				
+				oFld.display 			= display.visible;
+		    oFld.textSize    	= strTextSize;
+		    oFld.textFont    	= font.HelvB;
+		    oFld.alignment   	= "center";
+		    oFld.readonly    	= true;
+		    oFld.print       	= true;
+		    oFld.hidden      	= false;
+		    oFld.delay       	= false;
+		    //oFld.rotation   = 45;
+		}
+		return oFld;
+}

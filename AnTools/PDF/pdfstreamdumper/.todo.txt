@@ -1,0 +1,24 @@
+
+graphing: handled x = function() declares in other functions
+
+test: autocomplete dialog disappearing as you keep typing? - should be fixed..
+
+refactor form overrides fail on global screipt + can not rename functions
+
+------------------------
+new rtclick menu handles this pretty well..
+jsui, if word under cursor is a recgonized function name, and user is holding ctrl, turn it blue and underline
+      if they click, navigate to function (lot of work with the func list sitting right there..but with a shift
+      too could be search all..handy but allot of work
+
+-----------------
+   nope cant do without replicating findall dialog in ocx (unless i implement it in the ocx..ok..)
+
+x- jsui find all column to show which function the result is in? ( .CurrentFunction )
+x- jsui keep track of line positions on function click and have back forward buttons
+-----------------
+
+
+graph ui navigate on node click (pita)
+
+

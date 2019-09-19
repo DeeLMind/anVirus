@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{af2e0002-5627-44a9-84c7-f97469f2969c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{de31681f-d5e5-43f6-95f3-b53877eca50b}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="jbig2dec">
+      <UniqueIdentifier>{652e1897-8738-4791-8f6e-3a334519b3a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{0aec8a5b-5410-463b-aabe-3ee5f2f98d46}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="base_memory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="filt_basic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="filt_faxd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="filt_jbig2d.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stm_buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stm_open.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stm_read.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_arith.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_arith_iaid.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_arith_int.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_generic.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_halftone.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_huffman.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_image.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_metadata.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_mmr.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_page.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_refinement.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_segment.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_symbol_dict.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+    <ClCompile Include="jbig2dec\jbig2_text.c">
+      <Filter>jbig2dec</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="exports.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="fitz-internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fitz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\config_win32.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_arith.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_arith_iaid.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_arith_int.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_generic.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_halftone.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_huffman.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_hufftab.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_image.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_metadata.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_mmr.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_priv.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_symbol_dict.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\jbig2_text.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+    <ClInclude Include="jbig2dec\os_types.h">
+      <Filter>jbig2dec</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+var output = null;
+output = "Run at Document Opening";
+this.app.alert(output);

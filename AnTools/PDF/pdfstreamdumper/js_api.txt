@@ -1,0 +1,18 @@
+Save2Clipboard(x) 
+GetClipboard() 
+t(x) 
+eval(x) 
+unescape(str)
+alert(str)
+Hexdump(str, Optional hexOnly = 0)
+WriteFile(path, data)
+ReadFile(path)
+HexString2Bytes(str)
+Disasm(bytes)
+pad(ByVal str, cnt, Optional char = 0, Optional padleft As Boolean = True)
+EscapeHexString(hexstr) 
+GetStream(index) 
+CRC(x) 
+GetPageNumWords(Optional page = 0) As Long
+GetPageNthWord(Optional page = 0, Optional word = 0, Optional strip = 0)
+

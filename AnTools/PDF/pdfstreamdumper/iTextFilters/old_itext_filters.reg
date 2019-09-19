@@ -1,0 +1,84 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\Record\{B95F9409-66C7-3901-8190-706AE6A846DE}\1.0.0.0]
+"Class"="iTextFilters.mDecoders"
+"Assembly"="iTextFilters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v2.0.50727"
+
+[HKEY_CLASSES_ROOT\iTextFilters.MemDecoder]
+@="iTextFilters.MemDecoder"
+
+[HKEY_CLASSES_ROOT\iTextFilters.MemDecoder\CLSID]
+@="{1FFC9D5F-1DE9-317F-AA86-8D294A3E19AB}"
+
+[HKEY_CLASSES_ROOT\CLSID\{1FFC9D5F-1DE9-317F-AA86-8D294A3E19AB}]
+@="iTextFilters.MemDecoder"
+
+[HKEY_CLASSES_ROOT\CLSID\{1FFC9D5F-1DE9-317F-AA86-8D294A3E19AB}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="iTextFilters.MemDecoder"
+"Assembly"="iTextFilters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v2.0.50727"
+
+[HKEY_CLASSES_ROOT\CLSID\{1FFC9D5F-1DE9-317F-AA86-8D294A3E19AB}\InprocServer32\1.0.0.0]
+"Class"="iTextFilters.MemDecoder"
+"Assembly"="iTextFilters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v2.0.50727"
+
+[HKEY_CLASSES_ROOT\CLSID\{1FFC9D5F-1DE9-317F-AA86-8D294A3E19AB}\ProgId]
+@="iTextFilters.MemDecoder"
+
+[HKEY_CLASSES_ROOT\CLSID\{1FFC9D5F-1DE9-317F-AA86-8D294A3E19AB}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
+
+[HKEY_CLASSES_ROOT\System.util.zlib.ZStream]
+@="System.util.zlib.ZStream"
+
+[HKEY_CLASSES_ROOT\System.util.zlib.ZStream\CLSID]
+@="{E79BACE8-D238-3219-B31E-5D20761E40B4}"
+
+[HKEY_CLASSES_ROOT\CLSID\{E79BACE8-D238-3219-B31E-5D20761E40B4}]
+@="System.util.zlib.ZStream"
+
+[HKEY_CLASSES_ROOT\CLSID\{E79BACE8-D238-3219-B31E-5D20761E40B4}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="System.util.zlib.ZStream"
+"Assembly"="iTextFilters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v2.0.50727"
+
+[HKEY_CLASSES_ROOT\CLSID\{E79BACE8-D238-3219-B31E-5D20761E40B4}\InprocServer32\1.0.0.0]
+"Class"="System.util.zlib.ZStream"
+"Assembly"="iTextFilters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v2.0.50727"
+
+[HKEY_CLASSES_ROOT\CLSID\{E79BACE8-D238-3219-B31E-5D20761E40B4}\ProgId]
+@="System.util.zlib.ZStream"
+
+[HKEY_CLASSES_ROOT\CLSID\{E79BACE8-D238-3219-B31E-5D20761E40B4}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
+
+[HKEY_CLASSES_ROOT\System.util.zlib.JZlib]
+@="System.util.zlib.JZlib"
+
+[HKEY_CLASSES_ROOT\System.util.zlib.JZlib\CLSID]
+@="{E6E6E301-4819-36DD-BED8-88056E78DD3B}"
+
+[HKEY_CLASSES_ROOT\CLSID\{E6E6E301-4819-36DD-BED8-88056E78DD3B}]
+@="System.util.zlib.JZlib"
+
+[HKEY_CLASSES_ROOT\CLSID\{E6E6E301-4819-36DD-BED8-88056E78DD3B}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="System.util.zlib.JZlib"
+"Assembly"="iTextFilters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v2.0.50727"
+
+[HKEY_CLASSES_ROOT\CLSID\{E6E6E301-4819-36DD-BED8-88056E78DD3B}\InprocServer32\1.0.0.0]
+"Class"="System.util.zlib.JZlib"
+"Assembly"="iTextFilters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v2.0.50727"
+
+[HKEY_CLASSES_ROOT\CLSID\{E6E6E301-4819-36DD-BED8-88056E78DD3B}\ProgId]
+@="System.util.zlib.JZlib"
+
+[HKEY_CLASSES_ROOT\CLSID\{E6E6E301-4819-36DD-BED8-88056E78DD3B}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]

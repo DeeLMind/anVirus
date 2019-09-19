@@ -1,0 +1,76 @@
+/* Extract US Social Security Numbers From the Document */
+// This script will scan all pages of the input document
+// and extract :
+// Social security numbers: 
+// Output PDF document will be placed in the same folder
+// as input. The name of the output document will be:
+// Original filename + "_Extracted_SSNs"
+
+var reMatch=/(?!000)([0-6]\d{2}|7([0-6]\d|7[012]))([ -])(?!00)\d\d\3(?!0000)\d{4}/g;
+
+var strExt = "_Extracted_SSNs.pdf";
+var strIntro = "Social Security Numbers extracted from document: ";
+var strFinal = "Total number of SSNs extracted: " ;
+
+ExtractFromDocument(reMatch,strExt,strIntro,strFinal);
+
+function ExtractFromDocument(reMatch, strFileExt, strMessage1, strMessage2)
+{
+var chWord, numWords;
+
+// construct filename for output document
+var filename = this.path.replace(/\.pdf$/, strFileExt);
+
+// create a report document
+try {
+    var ReportDoc = new Report();
+    var Out = new Object(); // array where we will collect all our emails before outputing them
+    
+    ReportDoc.writeText(strMessage1 + this.path);
+    ReportDoc.divide(1);      // draw a horizontal divider
+    ReportDoc.writeText(" "); // write a blank line to output
+    
+    for (var i = 0; i < this.numPages; i++)
+    {
+        numWords = this.getPageNumWords(i);
+        var PageText = "";
+        for (var j = 0; j < numWords; j++) {
+            var word = this.getPageNthWord(i,j,false);
+            PageText += word;
+            }
+        var strMatches = PageText.match(reMatch);
+        if (strMatches == null) continue;
+        // now output matches into report document
+        for (j = 0; j < strMatches.length; j++) {
+            Out[strMatches[j]] = true; // store email as a property name
+            }
+    }
+    
+    var nTotal = 0;
+    for (var prop in Out) 
+    {
+        ReportDoc.writeText(prop);
+        nTotal++;
+    }
+    
+    ReportDoc.writeText(" "); // output extra blank line
+    ReportDoc.divide(1); // draw a horizontal divider
+    ReportDoc.writeText(strMessage2 + nTotal);
+    
+    // save report to a document
+    ReportDoc.save(
+        {
+        cDIPath: filename
+        });
+
+}
+catch(e)
+{
+app.alert("Processing error: "+e)
+}
+    
+} // end of the function
+    
+
+
+

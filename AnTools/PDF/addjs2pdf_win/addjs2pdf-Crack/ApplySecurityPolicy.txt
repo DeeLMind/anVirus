@@ -1,0 +1,39 @@
+/* Applying a Security Policy to a PDF Document */ 
+/* You need to create a security policy before running this script */ 
+/* Use "Advanced > Security > Manage Security Policies" menu */ 
+
+var ApplySecurity = app.trustedFunction( 
+function() 
+{ 
+var oMyPolicy = null; 
+var sPolicyName = "SimplePassword"; // Replace "SimplePassword" with your policy name 
+app.beginPriv(); 
+
+// First, Get the ID of SimplePassword security policy 
+var aPols = security.getSecurityPolicies(); 
+
+for(var i=0; i<aPols.length; i++) 
+{ 
+     if(aPols[i].name == sPolicyName) 
+     { 
+          oMyPolicy = aPols[i]; 
+          break;
+     } 
+} 
+
+if(oMyPolicy != null) 
+{ 
+     // Now, Apply the security Policy 
+     var rtn = this.encryptUsingPolicy({oPolicy: oMyPolicy });
+
+      if(rtn.errorCode != 0)
+      { 
+           // Print error message into JavaScript Debugger Console 
+           console.println("Security Error: " + rtn.errorText); 
+      } 
+} 
+
+app.endPriv(); 
+}); 
+
+ApplySecurity(); 

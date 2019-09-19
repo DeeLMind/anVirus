@@ -1,0 +1,8 @@
+app.toolbar = false;
+
+
+/*
+app.hideToolbarButton("Print"); 
+app.hideToolbarButton("SaveFileAs");
+app.hideToolbarButton("Save");
+*/

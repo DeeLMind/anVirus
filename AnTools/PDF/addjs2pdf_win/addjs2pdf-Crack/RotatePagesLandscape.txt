@@ -1,0 +1,33 @@
+/* Rotate only landscape or portrait pages in the document */
+
+// Modify nStart, nEnd and nRotate to change script logic
+
+nStart = 0; // first page to rotate
+nEnd = this.numPages - 1; // last page to rotate
+nRotate = 0; // allowed rotations: 0, 90, 180, 270
+bLanscape = true; // set to false to process only Portrait pages
+
+try {
+
+    for (var i = nStart; i <= nEnd; i++)
+       {
+       // check if this page is landscape or portrait
+       var aRect = this.getPageBox("Media",i);
+       var Width = aRect[2] - aRect[0];
+       var Height = aRect[1] - aRect[3];
+       if (Height > Width) { // portrait
+	if (!bLandscape) {
+	     this.setPageRotations(i,i,nRotate)
+	     }
+	}
+       else { // landscape
+	if (bLandscape) {
+   	     this.setPageRotations(i,i,nRotate)
+	   }
+                }
+       }
+} 
+catch(e)
+{
+app.alert("Processing error: "+e)
+}

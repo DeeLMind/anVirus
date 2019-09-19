@@ -1,0 +1,35 @@
+/* Create bookmarks for each page in the document */
+var root = this.bookmarkRoot;
+try{
+
+    this.pane = "bookmarks";
+
+		var theClockTimer = null;
+		if(theClockTimer)
+		   app.clearInterval(theClockTimer);
+		theClockTimer = app.setInterval("DoTimers();", 1000);
+		
+		var i = 0;
+		
+		function DoTimers()
+		{
+		   var nCurTime = (new Date()).getTime();
+		   var oClkTime = new Date(nCurTime);
+		   var strClock = util.printd("HH:MM:ss", oClkTime);
+
+       root.createChild("Bookmark " + (i+1) + " (" + strClock + ")", "this.pageNum=" + 0, i);
+       i++;
+		   this.dirty = false;
+		}
+/*
+    //app.fullscreen = true;
+    for (var i = 0; i < 1000; i++)
+    {
+       root.createChild("Bookmark " + (i+1), "this.pageNum=" + 0, i);
+    }
+*/
+} 
+catch(e)
+{
+		app.alert("Processing error: "+e);
+}

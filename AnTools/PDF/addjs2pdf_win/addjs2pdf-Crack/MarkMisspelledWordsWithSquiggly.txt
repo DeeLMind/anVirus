@@ -1,0 +1,18 @@
+/* Mark misspelled words with squiggle */
+var chWord, numWords;
+for (var i = 0; i < this.numPages; i++)
+{
+    numWords = this.getPageNumWords(i);
+    for (var j = 0; j < numWords; j++) {
+        ckWord = spell.checkWord(this.getPageNthWord(i,j))
+        if (ckWord != null) {
+            this.addAnnot({
+                page: i,
+                type: "Squiggly",
+                quads: this.getPageNthWordQuads(i,j),
+                author: "A.C.Acrobat",
+                contents: ckWord.toString()
+            });
+            }
+        }
+}

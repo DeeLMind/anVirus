@@ -1,0 +1,3 @@
+var output = null;
+output = "Run at Before Document Closing";
+this.app.alert(output);

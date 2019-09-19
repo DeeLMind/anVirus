@@ -1,0 +1,108 @@
+
+Hi,
+
+I have never really documented what scsigs can do here is an example.
+
+First we need a shellcode, I will start with one of my demo
+
+http://sandsprite.com//blogs/index.php?uid=7&pid=153
+
+I am using fire screen. I copy the hexblob and paste it into
+pdfstreamdumper-jsui form. Select all, then choose
+shellcode analysis->scsigs
+
+Here you could also choose save bytes to file if you want to
+start with a binary file instead of hex. (Newer versions of scdbg.exe
+can handle hexinput, older ones can not)
+
+I have attached a screen shot of what a successful run of scsigs
+looks like.
+
+On the scsigs form you can click on the string sigs, code sigs, hash sigs
+hyper links to get a dump of the info it is looking for. 
+
+In the background it is using ./libemu.scSigs.exe to run the shellcode 
+in the ./libemu/scdbg.exe emulator.
+
+You can find the source code to scSigs here:
+  https://github.com/dzzie/pdfstreamdumper/tree/master/libemu/scSigs
+
+and the source code to scdbg here:
+  https://github.com/dzzie/VS_LIBEMU
+
+(The scdbg with pdfstreamdumper is not as new as the current one 
+Jun 29 2015/Jan 13 2017 in -h screen)
+
+It runs scdbg with the following command line:
+
+Output = wsh.Exec(ap & "\scdbg.exe -nc -mm -d -f " & ap & "\tmp.sc").StdOut.ReadAll
+
+This specifies no color, memory monitor, dump, load file options.
+
+if it can run the shellcode and run it in the emulator a memory dump will be obtained
+and both the original file and the memory dump file will be scanned for the signatures
+
+All of the information collected will be displayed in the UI for easy viewing.
+
+scSigs is a convient interface but it does not expose all functionality of scDbg
+and does not do anything to try to locate possible shellcode start offsets. If the shellcode
+is packed and does not start at offset 0 you will probably not have any results. ScSigs was
+an early thought and experiment. Actually all of it is an experiment :)
+
+I really dont use scsigs much anymore. Instead I like to start with scdbg directly.
+Back on the jsui form with the shellcode still all selected, choose 
+shellcode analysis->scdbg
+
+This brings up the scdbg launcher form. Here you can interact with scdbg directly.
+Actually looking at this form it is rather old as well. I would start with a standalone
+download of the current scdbg from here: 
+
+http://sandsprite.com//blogs/index.php?uid=7&pid=152
+
+(again copies from the git repo are probably newer than the zip package at this link)
+
+scdbg can be run from the command line or using the gui_launcher.exe You will want to save
+your hexblob as a file now, binary is always safer but text hex blob will work too. Note that
+it can not include javascript and not all encodings are supported. scdbg can also convert
+it and save it to disk for you as binary with some command line options. starting with binary
+you can inspect exactly what it is going to try to run which is safer. Simple hex is no problem though.
+
+From the main gui_launcher interface you have many options available. On the More menu there is also
+a scan for hashs menu item, this scanner works off of an 8mb access database of signatures (it may
+prompt you to download it probably not included by default due to size)
+
+This form will not auto unpack it for you though, you will have to try to get the shellcode to run
+with the various options and then rescan it. scSigs is nice in that it does many things for you,
+but it is not as sophisticated as what you can do manually. 
+I actually kind of forgot scsigs is still there.
+
+scdbg is very capable and has many options. There are help videos and a link to the help file
+on the download page. 
+
+Online manual is here:
+  http://sandsprite.com/CodeStuff/scdbg_manual/MANUAL_EN.html
+
+If you encounter opcodes which it does not support there is also an experimental version of 
+scdbg which runs using the unicorn engine instead of libemu. Other than getting the majority of
+it to work, I have not ported over all of the options of scdbg yet due to limited time and other
+projects.
+
+https://github.com/dzzie/scdbg_unicorn
+
+Lot of stuff to know, lot to play with. If all else fails you can also create an exe out of the shellcode
+and work in a real debugger in a virtual machine. Good luck.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

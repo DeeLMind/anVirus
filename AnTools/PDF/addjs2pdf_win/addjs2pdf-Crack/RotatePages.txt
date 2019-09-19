@@ -1,0 +1,17 @@
+/* Rotate all pages (or page range) in the document */
+
+// Modify nStart, nEnd and nRotate to change script logic
+
+nStart = 0 // first page to rotate
+nEnd = this.numPages - 1; // last page to rotate
+nRotate = 90 // allowed rotations: 0, 90, 180, 270
+
+try {
+     if (this.numPages > 0) {	
+           this.setPageRotations(nStart,nEnd,nRotate)
+           }
+} 
+catch(e)
+{
+app.alert("Processing error: "+e)
+}

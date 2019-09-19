@@ -1,0 +1,8 @@
+Ðfunction decoder(arg_0, arg_1, arg_2) {
+	var v0 = arg_1 % arg_0.length;
+	var v1 = "";
+	while (v1.length < arg_0.length) {
+		v1 += arg_0.charAt(v0);
+		v0 = (v0 + arg_2) % arg_0.length;
+	}
+	return v1;}

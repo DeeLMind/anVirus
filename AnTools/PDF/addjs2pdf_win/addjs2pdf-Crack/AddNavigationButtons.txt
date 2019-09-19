@@ -1,0 +1,73 @@
+// Add navigation buttons to the page
+// This script puts 3 buttons on top of every page (except the first one that has one button)
+// First button "<" : takes to the previous page
+// Second button: "1" : takes to the first page of the document
+// Third button: ">" : takes to the next page in the document (does not exists on the last page)
+
+var inch = 72;
+
+try 
+{
+
+    nLastPage = this.numPages - 1;
+
+    for (var p = 0; p < this.numPages; p++)
+    {
+        var x = 0.5;
+ 
+        if (p > 0)
+        {
+            AddButton(p,x,0.5,0.25,0.25,"PrevPage","<","Previous Page","this.pageNum--;"); // left arrow, previous page
+            x += 0.3;
+        }
+    
+        if (p != 0)
+        {
+            AddButton(p,x,0.5,0.25,0.25,"StartPage","1","Go To First Page","this.pageNum=0;"); // "1", takes to the first page
+            x += 0.3;
+        }
+    
+        if (p < nLastPage)
+        {
+            AddButton(p,x,0.5,0.25,0.25,"NextPage",">","Next Page","this.pageNum++;"); // right arrow, next page
+            x += 0.3;
+        }
+
+        AddButton(p,x,0.5,0.25,0.25,"Back","<<","Go Back","app.execMenuItem(\"GoBack\");"); // right arrow, next page
+        x += 0.3;
+        
+    }
+
+}
+
+
+catch (e)
+{
+app.alert(e);
+}
+
+// AddButton function creates a button with given parameters and action
+
+function AddButton(nPageNum, x, y, width, height, strText, strCaption, strToolTip, strAction)
+{
+    var aRect = this.getPageBox( { nPage: nPageNum} );
+    aRect[0] += x * inch;
+    aRect[1] -= y * inch;
+    aRect[2] = aRect[0] + width * inch;
+    aRect[3] = aRect[1] - height * inch;
+
+    var f = this.addField(strText,"button", nPageNum, aRect);
+    f.setAction("MouseUp",strAction);
+    f.userName = strToolTip;
+    f.delay = true;
+    f.borderStyle = border.s;
+    f.highlight = "push";
+    f.textSize = 0; // autosized
+    f.textColor = color.blue;
+    f.strokeColor = color.blue;
+    f.fillColor = color.white;
+    // you can specify a different font here, otherwise it uses a default one
+    //f.textFont = font.ZapfD;
+    f.buttonSetCaption(strCaption); 
+    f.delay = false;
+}

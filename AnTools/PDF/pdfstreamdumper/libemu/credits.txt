@@ -1,0 +1,70 @@
+
+scsigs.exe is a quick project i made to do static signature checks on a shellcode file.
+it will also try to run it through scdbg.exe to unpack it and then rescan.
+
+scdbg is an adaptation of sctest which was written by by Paul Baecher and Markus Koetter
+original source for sctest can be downloaded from the project home page here:
+
+http://libemu.carnivore.it/about.html
+
+source for the modified sctest included here can be downloaded from:
+
+git clone git@github.com:dzzie/SCDBG.git 
+
+project page: 
+
+http://sandsprite.com/blogs/index.php?uid=7&pid=152
+
+
+scdbg help screen: (this is old run scdbg -h to see current) 
+
+ 		 _______________
+		|               |
+		|               |
+		|    libemu     |
+		| x86 emulation |
+		|               |
+		|               |
+		|               |
+		\ O             |
+		 \______________|   build: 0.2.dz
+
+	-----[ libemu - x86 shellcode emulation ]-----
+	Copyright (C) 2007  Paul Baecher & Markus Koetter
+
+  /hex         	show hex dumps for hook reads/writes
+  /S < file.sc 	read shellcode/buffer from stdin ex: 'sctest.exe < file.sc'
+  /f fpath 	load shellcode from file specified.
+  /o hexnum 	base offset to use (default: 0x401000)
+  /redir ip:port 	redirect connect to ip (port optional)
+  /G fpath 	save a dot formatted callgraph in filepath
+  /i         	enable interactive hooks
+  /v         	verbosity, can be used up to 3 times, ex. /v /v or /vv
+  /e int 	verbosity on error (3 = debug shell)
+  /t int 	time to delay (ms) between steps when v=1 or 2
+  /h         	show this help
+  /bp hexnum 	set breakpoint (shortcut for -laa <hexaddr> -vvv)
+  /a         	adjust offsets to file offsets not virtual
+  /d         	dump unpacked shellcode if changed (requires /f)
+  /las int 	log at step ex. -las 100
+  /laa hexnum 	log at address ex. -laa 0x401020
+  /s int 	max number of steps to run (def=100000, -1 = run till error)
+
+   dbg> shell prompt commands:
+	? - help, this help screen, h also works
+	v - change verbosity (0-4)
+	s - step, continues execution, g or ENTER also work
+	c - reset step counter
+	r - execute till return (v=0 recommended)
+	u - unassembled address
+	b - break at address
+	m - reset max step count
+	e - set eip
+	w - dWord dump,(32bit ints) prompted for hex base addr and then size
+	d - Dump Memory (hex dump) prompted for hex base addr and then size
+	x - execute x steps (use with reset step count)
+	t - set time delay (ms) for verbosity level 1/2
+	k - show stack
+	f - dereF registers (show any api addresses in regs)
+	q - quit
+

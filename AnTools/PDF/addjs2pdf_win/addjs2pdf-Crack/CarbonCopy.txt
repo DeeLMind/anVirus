@@ -1,0 +1,33 @@
+// Carbon Copy pages in the PDF file 
+// IMPORTANT: Set Output Options to the filename you need
+
+// CHANGE THIS NUMBER: IT'S NUMBER OF ADDITIONAL COPIES 
+var nNumCopies = 2; // make 1 additional copy(es) of each page
+
+try {
+
+var newName = this.path;
+var filename = newName.replace(".pdf","_Original.pdf"); // save a copy of original document
+this.saveAs(filename);
+
+var Num = this.numPages;
+var nNumDups = nNumCopies+1; 
+
+for (var i = 0; i < Num; i++) {
+    for (var j = 0; j < nNumCopies; j++) {
+        k = i*nNumDups + j;
+        this.insertPages({ nPage: k, cPath:newName, nStart:i });
+        }
+    }
+
+// set page labels: number each copy with a label
+for (var k = 0; k < this.numPages; k+= nNumDups) 
+{
+     this.setPageLabels(k,[ "D", "Copy ", 1]);   
+}
+
+}
+catch(e)
+{
+    app.alert(e);
+}

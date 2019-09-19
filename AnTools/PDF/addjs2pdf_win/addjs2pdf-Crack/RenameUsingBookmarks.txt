@@ -1,0 +1,48 @@
+/* Rename Files Using Bookmarks */
+// This is a script that can rename files based on bookmarks. 
+// If document has 3 bookmarks the output filename is:
+// First bookmark From Second Bookmark – Third Bookmark
+// If there are more than 3 bookmarks, then output filename is:
+// First bookmark From Second Bookmark To Third Bookmark – Forth Bookmark 
+
+var fname = "";
+var bm = this.bookmarkRoot;
+
+// build a name
+if (bm.children != null)
+{        
+        var numBookmarks = Math.min(4,bm.children.length);
+	for (var i = 0; i < numBookmarks; i++)
+	{
+		switch (i) 
+                {
+                    case 1:
+                        fname += " From ";
+                        break;
+                    case 2:
+                        if (numBookmarks > 3)
+                        {
+                            fname += " To ";
+                        }
+                        else
+                        {
+                            fname += " - ";
+                        }
+                        break;
+                    case 3:
+                        fname += " - ";
+                        break;
+                    
+                }
+		fname += bm.children[i].name;
+	}
+}
+
+// make sure no illegal characters are included in the filename
+var outputname = fname.replace(/[?:\\/|<>"*]/g,"_");
+
+// console.println(outputname);
+
+// save document into c:/data/ folder
+// IMPORTANT: replace with a desired output folder location
+this.saveAs("/c/data/" + outputname + ".pdf");

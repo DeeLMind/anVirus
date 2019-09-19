@@ -1,0 +1,4 @@
+
+this.removeField("Printing_Watermark");
+this.removeField("Printing_ShowDate");
+this.dirty = false;
