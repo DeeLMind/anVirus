@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Items>
+	<Item Id="1" Name="Processes" Namespace="root\cimv2" WMIClassName="Win32_Process" WQL="select   ProcessId,   ParentProcessId,   Priority,   Description,   CommandLine,   ExecutablePath,   CreationDate,   Handle,   HandleCount,   ThreadCount,   KernelModeTime,   UserModeTime,   ReadOperationCount,   OtherOperationCount,   WriteOperationCount,   ReadTransferCount,   WriteTransferCount,   OtherTransferCount,   PageFaults from Win32_Process" BuildType="0">
+		<Column Property="ProcessId" Alias="Process ID" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ParentProcessId" Alias="Parent Process ID" NullValue="Null" Expression="$Value" DisplayFormat="%n"/>
+		<Column Property="Priority" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="Process Name" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CommandLine" Alias="Command Line" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ExecutablePath" Alias=".EXE Path" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CreationDate" Alias="Created" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Handle" Alias="Process Handle" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="HandleCount" Alias="Handles" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ThreadCount" Alias="Threads" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="KernelModeTime" Alias="CPU Time (Kernel)" NullValue="Null" Expression="$Value / 10000000" DisplayFormat="%0.4n sec."/>
+		<Column Property="UserModeTime" Alias="CPU Time (User)" NullValue="Null" Expression="$Value / 10000000" DisplayFormat="%0.4n sec."/>
+		<Column Property="ReadOperationCount" Alias="I/O Operation Count (Read)" NullValue="Null" Expression="$Value" DisplayFormat="%0.0n"/>
+		<Column Property="OtherOperationCount" Alias="I/O Operation Count (Other)" NullValue="Null" Expression="$Value" DisplayFormat="%0.0n"/>
+		<Column Property="WriteOperationCount" Alias="I/O Operation Count (Write)" NullValue="Null" Expression="$Value" DisplayFormat="%0.0n"/>
+		<Column Property="ReadTransferCount" Alias="Bytes Trasnferred (Read)" NullValue="Null" Expression="$Value / 1024" DisplayFormat="%0.2n KB"/>
+		<Column Property="WriteTransferCount" Alias="Bytes Transferred (Write)" NullValue="Null" Expression="$Value / 1024" DisplayFormat="%0.2n KB"/>
+		<Column Property="OtherTransferCount" Alias="Bytes Transferred (Other)" NullValue="Null" Expression="$Value / 1024" DisplayFormat="%0.2n KB"/>
+		<Column Property="PageFaults" Alias="Page Faults" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="2" Name="NT Log" Namespace="root\CIMV2" WMIClassName="Win32_NTEventlogFile" WQL="select   LogfileName,   Name,   LastModified,   LastAccessed,   CreationDate,   FileSize,   MaxFileSize,   NumberOfRecords,   OverWritePolicy,   Sources from Win32_NTEventlogFile" BuildType="0">
+		<Column Property="LogfileName" Alias="Log Name" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="File Name" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LastModified" Alias="Last Modified" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LastAccessed" Alias="Last Accessed" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CreationDate" Alias="Created" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="FileSize" Alias="Size" NullValue="Null" Expression="$Value / 1024" DisplayFormat="%0.0n KB"/>
+		<Column Property="MaxFileSize" Alias="Max. Size" NullValue="Null" Expression="$Value / 1024" DisplayFormat="%0.0n KB"/>
+		<Column Property="NumberOfRecords" Alias="Number of Records" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="OverWritePolicy" Alias="Overwrite Policy" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Sources" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="3" Name="Logical Disks" BuildType="0" Namespace="root\CIMV2" WMIClassName="Win32_LogicalDisk" WQL="select   DeviceID,   VolumeName,   Description,   FileSystem,   ProviderName,   Size,   FreeSpace,   VolumeSerialNumber,   VolumeDirty,   Compressed,   SupportsDiskQuotas,   QuotasDisabled,   QuotasIncomplete,   QuotasRebuilding,   SupportsFileBasedCompression from Win32_LogicalDisk">
+		<Column Property="DeviceID" Alias="Drive Letter" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="VolumeName" Alias="Label" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="FileSystem" Alias="File System" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderName" Alias="Provider" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Size" Alias="Size" NullValue="Null" Expression="$Value / 1024 / 1024" DisplayFormat="%0.2n MB"/>
+		<Column Property="FreeSpace" Alias="Free Space" NullValue="Null" Expression="$Value / 1024 / 1024" DisplayFormat="%0.2n MB"/>
+		<Column Property="VolumeSerialNumber" Alias="Serial Number" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="VolumeDirty" Alias="Dirty" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Compressed" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SupportsDiskQuotas" Alias="Supports Disk Quotas" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="QuotasDisabled" Alias="Quotas Disabled" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="QuotasIncomplete" Alias="Quotas Incomplete" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="QuotasRebuilding" Alias="Quotas Rebuilding" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SupportsFileBasedCompression" Alias="Supports File Based Compression" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="4" BuildType="0" Name="Partitions" Namespace="root\CIMV2" WMIClassName="Win32_DiskPartition" WQL="select  * from Win32_DiskPartition">
+		<Column Property="Access" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Availability" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="BlockSize" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Bootable" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="BootPartition" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Caption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ConfigManagerErrorCode" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ConfigManagerUserConfig" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CreationClassName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DeviceID" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DiskIndex" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ErrorCleared" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ErrorDescription" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ErrorMethodology" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="HiddenSectors" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Index" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InstallDate" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LastErrorCode" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NumberOfBlocks" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PNPDeviceID" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PowerManagementCapabilities" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PowerManagementSupported" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PrimaryPartition" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Purpose" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RewritePartition" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Size" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="StartingOffset" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Status" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="StatusInfo" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SystemCreationClassName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SystemName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Type" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="5" BuildType="0" Name="MSI installed products" Namespace="root\CIMV2" WMIClassName="Win32_Product" WQL="select   InstallDate2,   InstallLocation,   Name,   Vendor,   Version from Win32_Product">
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="InstallDate2" Alias="Install Date" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="InstallLocation" Alias="Install Location" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Vendor" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Version" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="6" BuildType="0" Name="Port Connector" Namespace="root\CIMV2" WMIClassName="Win32_PortConnector" WQL="select   Tag,   ExternalReferenceDesignator,   InternalReferenceDesignator,   Manufacturer,   Model,   OtherIdentifyingInfo,   PartNumber,   PoweredOn,   SerialNumber,   SKU,   Status,   Version from Win32_PortConnector">
+		<Column Property="Tag" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ExternalReferenceDesignator" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InternalReferenceDesignator" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Manufacturer" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Model" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="OtherIdentifyingInfo" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PartNumber" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PoweredOn" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SerialNumber" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SKU" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Status" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Version" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="7" BuildType="0" Name="SCSI Controllers" Namespace="root\CIMV2" WMIClassName="Win32_SCSIController" WQL="select  * from Win32_SCSIController">
+		<Column Property="Availability" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Caption" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ConfigManagerErrorCode" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ConfigManagerUserConfig" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ControllerTimeouts" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="CreationClassName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Description" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="DeviceID" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="DeviceMap" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="DriverName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ErrorCleared" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ErrorDescription" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="HardwareVersion" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Index" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="InstallDate" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="LastErrorCode" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Manufacturer" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="MaxDataWidth" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="MaxNumberControlled" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="MaxTransferRate" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PNPDeviceID" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PowerManagementCapabilities" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PowerManagementSupported" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ProtectionManagement" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ProtocolSupported" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Status" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="StatusInfo" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="SystemCreationClassName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="SystemName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="TimeOfLastReset" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="8" BuildType="0" Name="IrDA" Namespace="root\CIMV2" WMIClassName="Win32_InfraredDevice" WQL="select  * from Win32_InfraredDevice">
+		<Column Property="Availability" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Caption" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ConfigManagerErrorCode" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ConfigManagerUserConfig" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="CreationClassName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Description" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="DeviceID" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ErrorCleared" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ErrorDescription" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="InstallDate" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="LastErrorCode" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Manufacturer" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="MaxNumberControlled" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PNPDeviceID" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PowerManagementCapabilities" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PowerManagementSupported" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ProtocolSupported" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Status" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="StatusInfo" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="SystemCreationClassName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="SystemName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="TimeOfLastReset" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="9" BuildType="0" Name="WLAN Config" Namespace="root\WMI" WMIClassName="MSNdis_80211_Configuration" WQL="select  * from MSNdis_80211_Configuration">
+		<Column Property="Active" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="InstanceName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Ndis80211Config" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="10" BuildType="0" Name="PCMCIA Controller" Namespace="root\CIMV2" WMIClassName="Win32_PCMCIAController" WQL="select  * from Win32_PCMCIAController">
+		<Column Property="Availability" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Caption" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ConfigManagerErrorCode" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ConfigManagerUserConfig" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="CreationClassName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Description" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="DeviceID" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ErrorCleared" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ErrorDescription" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="InstallDate" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="LastErrorCode" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Manufacturer" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="MaxNumberControlled" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PNPDeviceID" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PowerManagementCapabilities" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PowerManagementSupported" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ProtocolSupported" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Status" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="StatusInfo" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="SystemCreationClassName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="SystemName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="TimeOfLastReset" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="11" Name="Network Hardware Status" Namespace="root\WMI" WMIClassName="MSNdis_HardwareStatus" WQL="select  * from MSNdis_HardwareStatus" BuildType="0">
+		<Column Property="InstanceName" Alias="Device" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Active" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="NdisHardwareStatus" Alias="Hardware Status" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="12" Name="Network Speed" Namespace="root\WMI" WMIClassName="MSNdis_LinkSpeed" WQL="select  * from MSNdis_LinkSpeed" BuildType="0">
+		<Column Property="InstanceName" Alias="Device" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NdisLinkSpeed" Alias="Link Speed" NullValue="Null" Expression="$Value / 10000" DisplayFormat="%0.2n Mbps"/>
+		<Column Property="Active" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="13" BuildType="0" Name="HNet Connection" Namespace="root\Microsoft\HomeNet" WMIClassName="HNet_Connection" WQL="select  * from HNet_Connection">
+		<Column Property="Guid" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="IsLanConnection" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PhonebookPath" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="14" BuildType="0" Name="IP4 Route Table" Namespace="root\CIMV2" WMIClassName="Win32_IP4RouteTable" WQL="select  * from Win32_IP4RouteTable">
+		<Column Property="Age" Alias="" NullValue="Null" Expression="$Value" DisplayFormat="%0.0n sec."/>
+		<Column Property="Caption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Destination" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Information" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InstallDate" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InterfaceIndex" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Mask" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Metric1" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Metric2" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Metric3" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Metric4" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Metric5" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NextHop" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Protocol" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Status" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Type" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="15" Name="Word Docs" Namespace="root\MSAPPS" WMIClassName="Win32_WordDocument" WQL="select  * from Win32_WordDocument" BuildType="0">
+		<Column Property="CreateDate" Alias="Created" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Path" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Size" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="16" Name="Word Active Docs" Namespace="root\MSAPPS" WMIClassName="Win32_WordActiveDocument" WQL="select  * from Win32_WordActiveDocument" BuildType="0">
+		<Column Property="AllowFastSaves" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Author" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Chars" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="CharsWithSpaces" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="CreateDate" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="LastAuthor" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="LastSavedDate" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Lines" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Pages" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Paragraphs" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Path" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Sections" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Size" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="StoryTypes" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Template" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="View" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="WindowPosLeft" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="WindowPosTop" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Words" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ZoomPercentage" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="17" Name="OLEDB Providers" Namespace="root\MSAPPS" WMIClassName="Win32_OleDbProvider" WQL="select  * from Win32_OleDbProvider" BuildType="0">
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Version" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="18" Name="Microsoft IE" Namespace="root\CIMV2\Applications\MicrosoftIE" WMIClassName="MicrosoftIE_Summary" WQL="select   CipherStrength,   ProductID,   Version,   Description,   Language,   ActivePrinter from MicrosoftIE_Summary" BuildType="0">
+		<Column Property="CipherStrength" Alias="Cipher Strength" NullValue="Null" Expression="$Value" DisplayFormat="%0.0n-bit"/>
+		<Column Property="ProductID" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Version" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Language" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ActivePrinter" Alias="Active Printer" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="19" Name="Microsoft IE (conn set.)" Namespace="root\CIMV2\Applications\MicrosoftIE" WMIClassName="MicrosoftIE_ConnectionSettings" WQL="select  * from MicrosoftIE_ConnectionSettings" BuildType="0">
+		<Column Property="AllowInternetPrograms" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="AutoConfigURL" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="AutoDisconnect" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="AutoProxyDetectMode" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Caption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DataEncryption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Default" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DefaultGateway" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DialUpServer" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DisconnectIdleTime" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="EncryptedPassword" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="IPAddress" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="IPHeaderCompression" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Modem" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NetworkLogon" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NetworkProtocols" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PrimaryDNS" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PrimaryWINS" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Proxy" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProxyOverride" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProxyServer" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RedialAttempts" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RedialWait" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ScriptFileName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SecondaryDNS" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SecondaryWINS" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ServerAssignedIPAddress" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ServerAssignedNameServer" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SettingID" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SoftwareCompression" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="20" BuildType="0" Name="DCOM Application" Namespace="root\CIMV2" WMIClassName="Win32_DCOMApplication" WQL="select   AppID,   Caption,   Name from Win32_DCOMApplication">
+		<Column Property="AppID" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Caption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="21" BuildType="0" Name="DCOM Application Settings" Namespace="root\CIMV2" WMIClassName="Win32_DCOMApplicationSetting" WQL="select  * from Win32_DCOMApplicationSetting">
+		<Column Property="AppID" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="AuthenticationLevel" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Caption" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="CustomSurrogate" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Description" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="EnableAtStorageActivation" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="LocalService" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="RemoteServerName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="RunAsUser" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ServiceParameters" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="SettingID" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="UseSurrogate" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="22" BuildType="0" Name="Account" Namespace="root\CIMV2" WMIClassName="Win32_Account" WQL="select   Name,   Description,   Caption,   Domain,   LocalAccount,   SID,   Status from Win32_Account">
+		<Column Property="Name" Alias="Local Name" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Caption" Alias="Domain Name" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Domain" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LocalAccount" Alias="Is Local Account" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SID" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Status" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="23" BuildType="0" Name="Cache Memory" Namespace="root\CIMV2" WMIClassName="Win32_CacheMemory" WQL="select   DeviceID,   Purpose,   BlockSize,   NumberOfBlocks,   InstalledSize,   MaxCacheSize,   CacheSpeed,   Status from Win32_CacheMemory">
+		<Column Property="DeviceID" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Purpose" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="BlockSize" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NumberOfBlocks" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InstalledSize" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="MaxCacheSize" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CacheSpeed" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Status" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="24" BuildType="0" Name="Print Job" Namespace="root\CIMV2" WMIClassName="Win32_PrintJob" WQL="select  * from Win32_PrintJob">
+		<Column Property="Caption" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="DataType" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Description" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Document" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="DriverName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ElapsedTime" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="HostPrintQueue" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="InstallDate" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="JobId" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="JobStatus" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Notify" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Owner" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PagesPrinted" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Parameters" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PrintProcessor" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Priority" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Size" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="StartTime" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Status" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="StatusMask" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="TimeSubmitted" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="TotalPages" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="UntilTime" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="25" BuildType="0" Name="Refrigeration" Namespace="root\CIMV2" WMIClassName="Win32_Refrigeration" WQL="select  * from Win32_Refrigeration">
+		<Column Property="ActiveCooling" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Availability" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Caption" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ConfigManagerErrorCode" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ConfigManagerUserConfig" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="CreationClassName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Description" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="DeviceID" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ErrorCleared" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ErrorDescription" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="InstallDate" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="LastErrorCode" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PNPDeviceID" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PowerManagementCapabilities" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="PowerManagementSupported" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Status" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="StatusInfo" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="SystemCreationClassName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="SystemName" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="26" BuildType="0" Name="Scheduled Jobs" Namespace="root\CIMV2" WMIClassName="Win32_ScheduledJob" WQL="select  * from Win32_ScheduledJob">
+		<Column Property="Caption" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Command" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="DaysOfMonth" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="DaysOfWeek" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Description" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="ElapsedTime" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="InstallDate" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="InteractWithDesktop" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="JobId" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="JobStatus" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Notify" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Owner" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Priority" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="RunRepeatedly" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="StartTime" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Status" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="TimeSubmitted" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="UntilTime" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="27" Name="Codec Files" BuildType="0" Namespace="root\CIMV2" WMIClassName="Win32_CodecFile" WQL="select   Caption,   Extension,   FileType,   Version,   Manufacturer,   Group,   CreationDate,   InstallDate,   Archive,   Compressed,   Encrypted,   Hidden,   Readable,   Writeable,   System from Win32_CodecFile">
+		<Column Property="Caption" Alias="File" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Extension" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="FileType" Alias="File Type" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Version" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Manufacturer" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Group" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="CreationDate" Alias="Created" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="InstallDate" Alias="Installed" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Archive" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Compressed" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Encrypted" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Hidden" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Readable" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="Writeable" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+		<Column Property="System" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="28" Name="UTC" Namespace="root\CIMV2" WMIClassName="Win32_UTCTime" WQL="select  * from Win32_UTCTime" BuildType="0">
+		<Column Property="Year" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Month" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Day" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DayOfWeek" Alias="Day of Week" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Hour" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Minute" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Second" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Milliseconds" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Quarter" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="WeekInMonth" Alias="Week in Month" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="29" BuildType="0" Name="System Restore Points" Namespace="root\DEFAULT" WMIClassName="SystemRestore" WQL="select  * from SystemRestore">
+		<Column Property="CreationTime" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="EventType" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RestorePointType" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SequenceNumber" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="30" BuildType="0" Name="System Restore Config" Namespace="root\DEFAULT" WMIClassName="SystemRestoreConfig" WQL="select   MyKey,   DiskPercent,   RPGlobalInterval,   RPLifeInterval from SystemRestoreConfig">
+		<Column Property="MyKey" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DiskPercent" Alias="Disk Percentage" NullValue="Null" Expression="$Value" DisplayFormat="%0.0n %%"/>
+		<Column Property="RPGlobalInterval" Alias="Interval at which scheduled system checkpoints are created" NullValue="Null" Expression="$Value / 60 /60" DisplayFormat="%0.0n hours"/>
+		<Column Property="RPLifeInterval" Alias="Time interval for which restore points are preserved" NullValue="Null" Expression="$Value / 60 / 60 /24" DisplayFormat="%0.0n days"/>
+	</Item>
+	<Item Id="31" BuildType="0" Name="Network Login Profile" Namespace="root\CIMV2" WMIClassName="Win32_NetworkLoginProfile" WQL="select  * from Win32_NetworkLoginProfile">
+		<Column Property="AccountExpires" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="AuthorizationFlags" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="BadPasswordCount" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Caption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CodePage" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Comment" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CountryCode" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Flags" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="FullName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="HomeDirectory" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="HomeDirectoryDrive" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LastLogoff" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LastLogon" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LogonHours" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LogonServer" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="MaximumStorage" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NumberOfLogons" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Parameters" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PasswordAge" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PasswordExpires" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PrimaryGroupId" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Privileges" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Profile" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ScriptPath" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SettingID" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="UnitsPerWeek" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="UserComment" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="UserId" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="UserType" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Workstations" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="32" BuildType="0" Name="Cluster" Namespace="root\MSCluster" WMIClassName="MSCluster_Cluster" WQL="select  * from MSCluster_Cluster">
+		<Column Property="AdminExtensions" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Caption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CreationClassName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Dedicated" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DefaultNetworkRole" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="EnableEventLogReplication" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="GroupAdminExtensions" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="IdentifyingDescriptions" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InstallDate" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="MaintenanceFile" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="MaxNumberOfNodes" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NameFormat" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NetworkAdminExtensions" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NetworkInterfaceAdminExtensions" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NetworkPriorities" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NodeAdminExtensions" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="OtherIdentifyingInfo" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PrimaryOwnerContact" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PrimaryOwnerName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="QuorumLogFileSize" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ResourceAdminExtensions" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ResourceTypeAdminExtensions" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Roles" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Security" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Security_Descriptor" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Status" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="33" BuildType="0" Name="Cluster Node" Namespace="root\MSCluster" WMIClassName="MSCluster_Node" WQL="select  * from MSCluster_Node">
+		<Column Property="BuildNumber" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Caption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Characteristics" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CreationClassName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CSDVersion" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Dedicated" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="EnableEventLogReplication" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Flags" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="IdentifyingDescriptions" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InitialLoadInfo" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InstallDate" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LastLoadInfo" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="MajorVersion" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="MinorVersion" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NameFormat" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NodeHighestVersion" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NodeLowestVersion" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="OtherIdentifyingInfo" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PowerManagementCapabilities" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PowerManagementSupported" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PowerState" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PrimaryOwnerContact" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PrimaryOwnerName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ResetCapability" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Roles" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="State" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Status" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="34" BuildType="0" Name="Cluster Resource" Namespace="root\MSCluster" WMIClassName="MSCluster_Resource" WQL="select  * from MSCluster_Resource">
+		<Column Property="Caption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Characteristics" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CoreResource" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CryptoCheckpoints" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DebugPrefix" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DeleteRequiresAllNodes" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Flags" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InstallDate" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="IsAlivePollInterval" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LoadBalAnalysisInterval" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LoadBalMinMemoryUnits" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LoadBalMinProcessorUnits" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LoadBalSampleInterval" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LoadBalStartupInterval" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LocalQuorumCapable" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LooksAlivePollInterval" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PendingTimeout" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PersistentState" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PrivateProperties" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="QuorumCapable" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RegistryCheckpoints" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ResourceClass" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RestartAction" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RestartPeriod" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RestartThreshold" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RetryPeriodOnFailure" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SeparateMonitor" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="State" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Status" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Subclass" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Type" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="35" BuildType="0" Name="Cluster Service" Namespace="root\MSCluster" WMIClassName="MSCluster_Service" WQL="select  * from MSCluster_Service">
+		<Column Property="Caption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CreationClassName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="EnableEventLogReplication" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InstallDate" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NodeHighestVersion" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NodeLowestVersion" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Started" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="StartMode" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="State" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Status" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SystemCreationClassName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SystemName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="36" BuildType="0" Name="Cluster Network Interface" Namespace="root\MSCluster" WMIClassName="MSCluster_NetworkInterface" WQL="select  * from MSCluster_NetworkInterface">
+		<Column Property="Adapter" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Address" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Availability" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Caption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Characteristics" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="CreationClassName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="DeviceID" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ErrorCleared" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ErrorDescription" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Flags" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="IdentifyingDescriptions" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InstallDate" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="LastErrorCode" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Network" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="OtherIdentifyingInfo" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PowerManagementCapabilities" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PowerManagementSupported" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PowerOnHours" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="State" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Status" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="StatusInfo" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SystemCreationClassName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SystemName" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="TotalPowerOnHours" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="37" BuildType="0" Name="Cluster Network" Namespace="root\MSCluster" WMIClassName="MSCluster_Network" WQL="select  * from MSCluster_Network">
+		<Column Property="Address" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="AddressMask" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Caption" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Characteristics" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Description" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Flags" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="InstallDate" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Name" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Role" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="State" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Status" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="38" BuildType="0" Name="PING AdRem" Namespace="root\CIMV2" WMIClassName="Win32_PingStatus" WQL="select  * from Win32_PingStatus where  ( Address = 'adremsoft.com' ) ">
+		<Column Property="Address" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="BufferSize" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="NoFragmentation" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="PrimaryAddressResolutionStatus" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProtocolAddress" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProtocolAddressResolved" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RecordRoute" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ReplyInconsistency" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ReplySize" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ResolveAddressNames" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ResponseTime" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ResponseTimeToLive" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RouteRecord" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="RouteRecordResolved" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SourceRoute" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="SourceRouteType" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="StatusCode" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Timeout" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="TimeStampRecord" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="TimeStampRecordAddress" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="TimeStampRecordAddressResolved" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="TimestampRoute" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="TimeToLive" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="TypeofService" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="39" BuildType="0" Name="WMI Providers" Namespace="root\CIMV2" WMIClassName="Msft_Providers" WQL="select  * from Msft_Providers">
+		<Column Property="HostingGroup" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="HostingSpecification" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="HostProcessIdentifier" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Locale" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="Namespace" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="provider" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_AccessCheck" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_CancelQuery" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_CreateClassEnumAsync" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_CreateInstanceEnumAsync" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_CreateRefreshableEnum" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_CreateRefreshableObject" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_CreateRefresher" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_DeleteClassAsync" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_DeleteInstanceAsync" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_ExecMethodAsync" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_ExecQueryAsync" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_FindConsumer" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_GetObjectAsync" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_GetObjects" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_GetProperty" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_NewQuery" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_ProvideEvents" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_PutClassAsync" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_PutInstanceAsync" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_PutProperty" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_QueryInstances" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_SetRegistrationObject" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_StopRefreshing" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="ProviderOperation_ValidateSubscription" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="TransactionIdentifier" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="User" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="40" BuildType="0" Name="TCP Connection Table" Namespace="root\snmp\localhost" WMIClassName="SNMP_RFC1213_MIB_tcpConnTable" WQL="select  * from SNMP_RFC1213_MIB_tcpConnTable">
+		<Column Property="tcpConnLocalAddress" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="tcpConnLocalPort" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="tcpConnRemAddress" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="tcpConnRemPort" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+		<Column Property="tcpConnState" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="41" BuildType="1" Name="TCP Statistics" Namespace="root\cimv2" WMIClassName="Win32_PerfFormattedData_Tcpip_IP" WQL="select  * from Win32_PerfFormattedData_Tcpip_IP">
+	</Item>
+	<Item Id="42" BuildType="1" Name="UDP Statistics" Namespace="root\CIMV2" WMIClassName="Win32_PerfFormattedData_Tcpip_UDP" WQL="select  * from Win32_PerfFormattedData_Tcpip_UDPv4">
+	</Item>
+	<Item Id="43" BuildType="0" Name="%CPU (Total)" Namespace="root\CIMV2" WMIClassName="Win32_PerfFormattedData_PerfOS_Processor" WQL="select   PercentProcessorTime from Win32_PerfFormattedData_PerfOS_Processor where  ( Name = '_Total' ) ">
+		<Column Property="PercentProcessorTime" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="44" BuildType="0" Name="Free Memory MBytes" Namespace="root\CIMV2" WMIClassName="Win32_PerfFormattedData_PerfOS_Memory" WQL="select   AvailableMBytes from Win32_PerfFormattedData_PerfOS_Memory">
+		<Column Property="AvailableMBytes" Alias="" NullValue="" Expression="" DisplayFormat=""/>
+	</Item>
+	<Item Id="45" Name="Associators of C:" Namespace="root\cimv2" WMIClassName="Win32_DiskPartition" WQL="ASSOCIATORS OF {Win32_LogicalDisk.DeviceID='C:'} WHERE ResultClass = Win32_DiskPartition" BuildType="1">
+	</Item>
+	<Item Id="46" Name="Subnamespaces" Namespace="root" WMIClassName="__NAMESPACE" WQL="select  * from __NAMESPACE" BuildType="0">
+		<Column Property="Name" Alias="" Expression="" DisplayFormat="" NullValue=""/>
+	</Item>
+	<Item Id="47" Name="LogicalDisk (MetaData)" Namespace="root\cimv2" WMIClassName="Win32_LogicalDisk" WQL="SELECT * FROM meta_class WHERE __this ISA 'Win32_LogicalDisk'" BuildType="1">
+	</Item>
+</Items>
